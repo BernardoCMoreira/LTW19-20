@@ -7,12 +7,12 @@ CREATE TABLE user(
 );
 
 CREATE TABLE rent(
+    rentID INTEGER PRIMARY KEY,
     propertyID INTEGER REFERENCES property(propertyID),
     touristID INTEGER REFERENCES users(userID),  
     startDate DATE NOT NULL,
     endDate DATE  NOT NULL CHECK (endDate > startDate),
-    cancelLimitDay DATE  NOT NULL,
-    PRIMARY KEY (propertyID, touristID)
+    cancelLimitDay DATE  NOT NULL
 );
 
 CREATE TABLE property(
@@ -26,14 +26,15 @@ CREATE TABLE property(
     price FLOAT  NOT NULL,
 );
 
-CREATE TABLE rating{
-    propertyID INTEGER REFERENCES property(propertyID),
-    touristID INTEGER REFERENCES users(userID),  
+CREATE TABLE rating(
+    rentID INTEGER PRIMARY KEY REFERENCES rent(rentID), 
     pontuaçao FLOAT,
-    PRIMARY KEY (propertyID, touristID)
-}
+    comentario TEXT 
+);
 
-CREATE TABLE image{
-    imageID INTEGER NOT PRIMARY KEY,
+CREATE TABLE image(
+    imageID INTEGER  PRIMARY KEY,
     propertyID INTEGER REFERENCES property(propertyID),
-}
+    userID INTEGER REFERENCES user(userID),
+    aproved BOOLEAN                                         
+);
