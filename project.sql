@@ -12,7 +12,8 @@ CREATE TABLE rent(
     touristID INTEGER REFERENCES users(userID),  
     startDate DATE NOT NULL,
     endDate DATE  NOT NULL CHECK (endDate > startDate),
-    cancelLimitDay DATE  NOT NULL
+    cancelLimitDay DATE  NOT NULL,
+    price FLOAT  NOT NULL
 );
 
 CREATE TABLE property(
