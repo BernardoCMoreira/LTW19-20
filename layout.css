@@ -1,0 +1,52 @@
+body {
+    width: 75%;
+    margin: 10px auto;
+}
+
+nav>ul {
+    display: flex;
+    width: 60px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto;
+}
+
+header img {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+header h1 {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+}
+
+header div {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto auto auto auto;
+}
+
+
+#menu>ul>li {
+    width: 6em;
+    font-family: 'Georgia';
+    font-weight: 700;
+    text-align: left;
+}
+
+#searchBar>ul>li {
+    width: 6em;
+    font-family: 'Georgia';
+    font-weight: 400;
+    text-align: left;
+}
