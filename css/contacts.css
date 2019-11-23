@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Mesmo estilo para os dois*/
+input[type=text],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/*Se não tiver o type definido, todos os inputs ficam com estas propriedades*/
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.column {
+    float: left;
+    width: 60%;
+    margin-top: 10px;
+    padding: 30px;
+}
