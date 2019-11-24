@@ -40,7 +40,6 @@ body>header a {
 
 }
 
-
 #menu {
     grid-column-start: 1;
     grid-column-end: auto;
@@ -48,13 +47,13 @@ body>header a {
     grid-row-end: auto;
 }
 
-nav>ul {
+#menu>ul {
     list-style: none;
     padding: 0;
     margin: 10 auto;
 }
 
-nav>ul>li {
+#menu>ul>li {
 
     font-family: 'Montserrat';
     font-weight: 500;
@@ -68,39 +67,11 @@ nav>ul>li {
     padding: 1em;
 }
 
-nav>ul>li>a {
+#menu>ul>li>a {
 
     color: black;
     text-decoration: none;
-
 }
-
-
-#searchBar {
-    grid-column-start: 1;
-    grid-column-end: auto;
-    grid-row-start: 3;
-    grid-row-end: auto;
-}
-
-aside>ul {
-    list-style: none;
-    padding: 0;
-    margin: 10 auto;
-}
-
-aside>ul>li {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    text-align: center;
-    background-color: #EDEFF0;
-}
-
-aside>ul>li>a {
-    color: black;
-    text-decoration: none;
-}
-
 
 footer {
     grid-column-start: 1;

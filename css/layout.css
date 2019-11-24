@@ -1,6 +1,9 @@
 body {
     width: 75%;
     margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto auto;
 }
 
 nav>ul {
@@ -29,12 +32,6 @@ header div {
     grid-row: 2;
 }
 
-body {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: auto auto auto auto;
-}
-
 #menu {
     grid-row: 2;
 }
@@ -45,11 +42,4 @@ body {
     font-weight: 700;
     text-align: center;
 
-}
-
-#searchBar>ul>li {
-    width: 6em;
-    font-family: 'Georgia';
-    font-weight: 400;
-    text-align: left;
 }
