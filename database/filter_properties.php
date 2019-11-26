@@ -71,25 +71,42 @@
     <div class="mainpage">
         <div class="searchbar">
             <label for="search">Search</label><br>
-            <a> ... </a>
+            <input type="text" id="search" name="search" placeholder="..."><!--<br>
+            <input type="submit" value="Find">-->
             <br>
             <br>
-            <label for="bedrooms"> Bedrooms</label><br>
-            <a><?=$bedrooms?></a>
-            <br>
-            <br>
-            <label for="local">Location</label><br>
-            <a><?=$local?></a>
-            <br>
-            <br>
-            <label for="price">Max.Price</label><br>
-            <a><?=$price?></a>
-            <br>
-            <br>
-            <form action="../html/MainPage.html" method="get">
-                <input type="submit" value="Back">
+            <form action="../database/filter_properties.php" method="get">
+                <label for="bedrooms"> Bedrooms</label><br>
+                <select id="bedrooms" name="bedrooms">
+                    <option value="-" <?php if($bedrooms == "-"):?> selected="selected"<?php endif;?>>-</option>
+                    <option value="0" <?php if($bedrooms == "0"):?> selected="selected"<?php endif;?>>T0</option>
+                    <option value="1" <?php if($bedrooms == "1"):?> selected="selected"<?php endif;?>>T1</option>
+                    <option value="2" <?php if($bedrooms == "2"):?> selected="selected"<?php endif;?>>T2</option>
+                    <option value="3" <?php if($bedrooms == "3"):?> selected="selected"<?php endif;?>>T3</option>
+                    <option value="4" <?php if($bedrooms == "4"):?> selected="selected"<?php endif;?>>T4</option>
+                </select>
+                <br>
+                <br>
+                <label for="local">Location</label><br>
+                <select id="local" name="local" size="1">
+                    <option value="-" <?php if($local == "-"):?> selected="selected"<?php endif;?>>-</option>
+                    <option value="faro"<?php if($local == "Faro"):?> selected="selected"<?php endif;?>>Faro</option>
+                    <option value="lisboa"<?php if($local == "Lisboa"):?> selected="selected"<?php endif;?>>Lisboa</option>
+                    <option value="aveiro"<?php if($local == "Aveiro"):?> selected="selected"<?php endif;?>>Aveiro</option>
+                    <option value="Porto"<?php if($local == "Porto"):?> selected="selected"<?php endif;?>>Porto</option>
+                    <option value="bragança"<?php if($local == "Bragança"):?> selected="selected"<?php endif;?>>Bragança</option>
+                    <option value="santarém"<?php if($local == "Santarém"):?> selected="selected"<?php endif;?>>Santarém</option>
+                    <option value="Coimbra"<?php if($local == "Coimbra"):?> selected="selected"<?php endif;?>>Coimbra</option>
+                    <option value="Covilha"<?php if($local == "Covilhã"):?> selected="selected"<?php endif;?>>Covilhã</option>
+                    <option value="Vila Nova de Gaia"<?php if($local == "Vila Nova de Gaia"):?> selected="selected"<?php endif;?>>Vila Nova de Gaia</option>
+                </select>
+                <br>
+                <br>
+                <label for="price">Max.Price</label><br>
+                <input type="range" id="price" name="price" min="1" max="9999"><br>
+                
+                <input type="submit" value="Search">
             </form>
-
         </div>
 
 
@@ -115,10 +132,7 @@
                 <br>
                 <br>
             <?php } ?>
-
-
         </article>
-
     </div>
     <footer>
         <p>&copy; HomeFull, 2019</p>
