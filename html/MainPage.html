@@ -26,13 +26,14 @@
         <ul>
             <li><a href="user.html">User</a></li>
             <li><a href="rents.html">Rents</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
             <li><a href="contacts.html">Contact Us</a></li>
         </ul>
     </nav>
 
     <div class="mainpage">
         <div class="searchbar">
+<<<<<<< HEAD
             <label for="search">Search</label>
             <br>
             <input type="text" id="search" name="search" placeholder="...">
@@ -69,10 +70,49 @@
             <input type="range" id="price" name="price" min="1" max="3000"  oninput="amount.value=price.value">
             <output name="amount" id="amount" for="price">1500</output>
             <br>
+=======
+            <label for="search">Search</label><br>
+            <input type="text" id="search" name="search" placeholder="..."><!--<br>
+            <input type="submit" value="Find">-->
+            <br>
+            <br>
+            <form action="../database/filter_properties.php" method="get">
+                <label for="bedrooms"> Bedrooms</label><br>
+                <select id="bedrooms" name="bedrooms">
+                    <option value="-">-</option>
+                    <option value="0">T0</option>
+                    <option value="1">T1</option>
+                    <option value="2">T2</option>
+                    <option value="3">T3</option>
+                    <option value="4">T4</option>
+                </select>
+                <br>
+                <br>
+                <label for="local">Location</label><br>
+                <select id="local" name="local" size="1">
+                    <option value="-">-</option>
+                    <option value="faro">Faro</option>
+                    <option value="lisboa">Lisboa</option>
+                    <option value="aveiro">Aveiro</option>
+                    <option value="Porto">Porto</option>
+                    <option value="bragança">Bragança</option>
+                    <option value="santarém">Santarém</option>
+                    <option value="Coimbra">Coimbra</option>
+                    <option value="Covilha">Covilhã</option>
+                    <option value="Vila Nova de Gaia">Vila Nova de Gaia</option>
+                </select>
+                <br>
+                <br>
+                <label for="price">Max.Price</label><br>
+                <input type="range" id="price" name="price" min="1" max="9999"><br>
+                
+                <input type="submit" value="Search">
+            </form>
+>>>>>>> e0997e8e8a177281c1814acd77a649232aa4388f
         </div>
 
         <article id="feed">
-            <p>House 1</p>
+           <!--< <p>House 1</p>
             <img src="../images/house1.jpg" alt="house " width="500" height="300" />
             <p>House 2</p>
             <img src="../images/house1.jpg" alt="house " width="500" height="300" />
@@ -80,7 +120,7 @@
             <img src="../images/house1.jpg" alt="house " width="500" height="300" />
             <p>House 4</p>
             <img src="../images/house1.jpg" alt="house " width="500" height="300" />
-
+--> 
         </article>
 
     </div>
