@@ -1,3 +1,10 @@
+@import url("user.css");
+@import url("contacts.css");
+@import url("feed.css");
+@import url("layout.css");
+@import url("sign.css");
+
+
 :root {
     --main-color-dark: #2A2F33;
     --main-color-1: #046DD5;
@@ -55,8 +62,9 @@ body>header a {
 
 #menu>ul>li {
 
-    font-family: 'Montserrat';
-    font-weight: 500;
+    font-family: 'Georgia';
+    width: 100%;
+    font-weight: 700;
     text-align: center;
     background-color: #EDEFF0;
 
@@ -75,7 +83,7 @@ body>header a {
 
 footer {
     grid-column-start: 1;
-    grid-column-end: auto;
+    grid-column-end: 3;
     grid-row: 4;
     background-color: var(--section-logocolor-1);
     ;

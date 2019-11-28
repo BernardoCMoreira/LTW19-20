@@ -7,8 +7,6 @@
     </title>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/layout.css" rel="stylesheet">
-    <link href="css/feed.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,10 +17,12 @@
         <div id="signup">
             <?php
                 if (isset($_SESSION['username'])){ ?>
-                    <form action="action_logout.php">
-                        <?=$_SESSION['username']?>
-                        <input type="submit" value="Logout">
-                    </form>
+                    <div class="usernameContainer">
+                        <form action="action_logout.php">
+                            <?=$_SESSION['username']?>
+                            <input type="submit" value="Logout">
+                        </form>
+                    </div>
                 <?php }
                 else{ ?>
                     <a href="register.php">Register</a>

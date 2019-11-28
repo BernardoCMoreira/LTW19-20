@@ -4,16 +4,20 @@
 
   $city_options = getAllCities();
   $bedroom_options = getAllBedrooms();
+  $maxPrice = getMaxPrice();
+  $minPrice = getMinPrice();
 
   if (!isset($bedrooms)) 
     $bedrooms = "-";
   if (!isset($local)) 
     $local = "-";
+  if (!isset($price))
+    $price = ($maxPrice + $minPrice) /2;
 
-  include ('templates/start_menu_bar.php');
-  include ('templates/bedrooms_options.php');
-  include ('templates/cities_options.php');
-  include ('templates/end_menu_bar.php');
+  include ('templates/sideBar/start_menu_bar.php');
+  include ('templates/sideBar/bedrooms_options.php');
+  include ('templates/sideBar/cities_options.php');
+  include ('templates/sideBar/end_menu_bar.php');
 
   
 ?>

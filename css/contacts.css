@@ -3,7 +3,7 @@
 }
 
 /* Mesmo estilo para os dois*/
-input[type=text],
+input[type=submit],
 textarea {
     width: 100%;
     padding: 12px;
@@ -22,13 +22,15 @@ input[type=submit] {
     cursor: pointer;
 }
 
-.container {
+.contactContainer,
+.aboutUsContainer {
     border-radius: 10px;
     background-color: #FFFFFF;
     padding: 10px;
 }
 
-.column {
+.contactContainer .column,
+.aboutUsContainer .column {
     float: left;
     width: 60%;
     margin-top: 10px;

@@ -1,5 +1,5 @@
 <br>
-    <div class="container">
+    <div class="aboutUsContainer">
         <div style="text-align:center">
             <h2>About Us</h2>
         </div>

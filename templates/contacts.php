@@ -1,5 +1,5 @@
 <br>
-    <div class="container">
+    <div class="contactContainer">
         <div style="text-align:center">
             <h2>Contact Us</h2>
 
