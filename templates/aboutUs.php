@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-    <title>
-        Login
-    </title>
-    <meta charset="UTF-8">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/layout.css" rel="stylesheet">
-    <link href="../css/contacts.css" rel="stylesheet">
-</head>
-
-<body>
-    <header>
-        <h1> <a href="../html/MainPage.html">HomeFull </a></h1>
-        <img src="../images/logo.png" alt="Logo " width="150" height="150" />
-
-        <div id="signup">
-            <a href="../html/register.html">Register</a>
-            <a href="../html/login.html">Login</a>
-        </div>
-    </header>
-    <br>
+<br>
     <div class="container">
         <div style="text-align:center">
             <h2>About Us</h2>
@@ -45,9 +22,3 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; HomeFull, 2019</p>
-    </footer>
-</body>
-
-</html>
