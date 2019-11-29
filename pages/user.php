@@ -5,7 +5,7 @@
     <br>
     <div class="userprofile">
     <div class="profile_photo">
-		<img src="images/user.png" alt="Logo " width="150" height="150" />
+		<img src="../images/user.png" alt="Logo " width="150" height="150" />
     <br>
 		<label for ="picture">Picture:</label>
 		<input type="file" id="picture" name="picture"/>
