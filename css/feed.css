@@ -4,7 +4,6 @@
     grid-column-gap: 50px;
     grid-template-columns: 25% auto;
     grid-template-rows: auto;
-
 }
 
 .searchbar {
@@ -13,18 +12,15 @@
     background-color: #ECE6E2;
     margin-bottom: 2%;
     font-size: 100%;
-
 }
 
 .feed {
     grid-column: 2;
-
 }
 
 article p {
     text-align: left;
     text-shadow: 1px 1px grey;
-
 }
 
 article img {

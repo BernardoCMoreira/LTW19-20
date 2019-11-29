@@ -1,11 +1,14 @@
 .contactContainer,
 .aboutUsContainer {
     box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 10px;
 }
 
 /* Mesmo estilo para os dois*/
-input[type=submit],
-textarea {
+.contactContainer > .row > .column > input[type=text],
+.contactContainer > .row > .column > textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -14,8 +17,7 @@ textarea {
     resize: vertical;
 }
 
-
-input[type=submit] {
+.contactContainer > .row > .column > input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -23,15 +25,8 @@ input[type=submit] {
     cursor: pointer;
 }
 
-.contactContainer,
-.aboutUsContainer {
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    padding: 10px;
-}
-
-.contactContainer .column,
-.aboutUsContainer .column {
+.contactContainer > .row > .column,
+.aboutUsContainer > .row > .column {
     float: left;
     width: 60%;
     margin-top: 10px;

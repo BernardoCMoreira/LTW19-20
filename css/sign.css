@@ -1,19 +1,17 @@
 
-form {
+.loginContainer > form {
     text-align: center;
     width: 80%;
     margin: 0 auto;
-
 }
 
-input[type=text],
-input[type=password] {
+.loginContainer > form > * > input[type=text],
+.loginContainer > form > * > input[type=password] {
     margin: 10px 10px;
     background: #FFFFFF;
 }
 
-
-label {
+.loginContainer form label {
     width: 30%;
     text-align: right;
     display: inline-block;

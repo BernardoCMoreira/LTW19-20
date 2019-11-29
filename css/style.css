@@ -44,7 +44,6 @@ body>header a {
     content: '';
     margin: 0 1em;
     border-right: 1px solid var(--main-color-dark);
-
 }
 
 #menu {
@@ -76,7 +75,6 @@ body>header a {
 }
 
 #menu>ul>li>a {
-
     color: black;
     text-decoration: none;
 }
@@ -86,5 +84,4 @@ footer {
     grid-column-end: 3;
     grid-row: 4;
     background-color: var(--section-logocolor-1);
-    ;
 }
