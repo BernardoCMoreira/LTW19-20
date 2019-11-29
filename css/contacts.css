@@ -14,7 +14,7 @@ textarea {
     resize: vertical;
 }
 
-/*Se não tiver o type definido, todos os inputs ficam com estas propriedades*/
+
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
