@@ -1,4 +1,5 @@
-* {
+.contactContainer,
+.aboutUsContainer {
     box-sizing: border-box;
 }
 
