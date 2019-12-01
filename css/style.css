@@ -85,3 +85,49 @@ footer {
     grid-row: 4;
     background-color: var(--section-logocolor-1);
 }
+
+.register, .loginContainer{
+    background-color: #FFFFFF;
+
+}
+.register form,
+.loginContainer form {
+
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.register input[type=text],
+.register input[type=password],
+
+.loginContainer input[type=text],
+.loginContainer input[type=password]{
+
+    margin: 6% 6%;
+    background: #FFFFFF;
+
+}
+
+.register label,
+.loginContainer label {
+    width: 25%;
+    text-align: right;
+    display: inline-block;
+
+}
+
+.rents{
+  padding:1em;
+  column-count:2;
+  column-rule: 2px solid #d3d3d3;
+  border-style: double;
+  border-width:2%;
+  border-color:#d3d3d3;
+
+}
+.owns h3,.rented h3{
+    margin-top: 0;
+    background-color: #d3d3d3;
+}
