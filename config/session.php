@@ -14,7 +14,9 @@
   }
 
   function clearMessages() {
-    unset($_SESSION['error_messages']);
-    unset($_SESSION['success_messages']);
+    if(isset($_SESSION['error_messages']))
+      unset($_SESSION['error_messages']);
+    if(isset($_SESSION['success_messages']))
+      unset($_SESSION['success_messages']);
   }
 ?>

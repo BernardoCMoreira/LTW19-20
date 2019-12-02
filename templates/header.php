@@ -42,7 +42,9 @@
         </ul>
     </nav>
 
-    <?php $errors = getErrorMessages();foreach ($errors as $error) {
+    <?php
+    include_once('config/session.php');
+    $errors = getErrorMessages();foreach ($errors as $error) {
         echo "<script type=\"text/javascript\">alert('$error');</script>";
     } ?>
     <?php $successes = getSuccessMessages();foreach ($successes as $success) { 
