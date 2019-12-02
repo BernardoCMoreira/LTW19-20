@@ -1,7 +1,8 @@
 .userprofile {
+    grid-row-start: 3;
     box-sizing: border-box;
 	padding: 4em;
-	background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 .userprofile > .profile_photo > img {

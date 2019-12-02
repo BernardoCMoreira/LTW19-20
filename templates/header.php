@@ -33,6 +33,15 @@
         </div>
     </header>
 
+    <nav id="menu">
+        <ul>
+            <li><a href="user.php">User</a></li>
+            <li><a href="rents.php">Rents</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li><a href="contacts.php">Contact Us</a></li>
+        </ul>
+    </nav>
+
     <?php $errors = getErrorMessages();foreach ($errors as $error) {
         echo "<script type=\"text/javascript\">alert('$error');</script>";
     } ?>

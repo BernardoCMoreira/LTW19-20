@@ -87,6 +87,7 @@ footer {
 }
 
 .register, .loginContainer{
+    grid-row-start: 3;
     background-color: #FFFFFF;
 
 }
@@ -120,6 +121,7 @@ footer {
 
 .rents{
   padding:1em;
+  grid-row-start: 3;
   column-count:2;
   column-rule: 2px solid #d3d3d3;
   border-style: double;
