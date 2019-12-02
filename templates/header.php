@@ -7,6 +7,7 @@
     </title>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -32,3 +33,10 @@
         </div>
     </header>
 
+    <?php $errors = getErrorMessages();foreach ($errors as $error) {
+        echo "<script type=\"text/javascript\">alert('$error');</script>";
+    } ?>
+    <?php $successes = getSuccessMessages();foreach ($successes as $success) { 
+        echo "<script type=\"text/javascript\">alert('$success');</script>";
+    } clearMessages(); ?>
+    </section>

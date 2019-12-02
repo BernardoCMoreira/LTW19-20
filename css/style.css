@@ -131,3 +131,22 @@ footer {
     margin-top: 0;
     background-color: #d3d3d3;
 }
+
+
+form .hint {
+    font-size: 0.6em;
+    padding: 0.5em;
+    align-self: center;
+    visibility: hidden;
+    display: none;
+  }
+  
+form input.invalid {
+    border: 1px solid red;
+    box-shadow: red 0 0 2px 2px;
+}
+
+form input.invalid + .hint{
+    display: contents;
+    visibility: visible;
+  }

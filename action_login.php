@@ -7,6 +7,10 @@
 
   if (verifyUser($username, $password)) {
     $_SESSION['username'] = $username;
+    $_SESSION['success_messages'][] = "Login Successful!";
+  }
+  else{
+    $_SESSION['error_messages'][] = "Login Failed!";
   }
   
   header('Location: MainPage.php');  
