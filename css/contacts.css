@@ -1,6 +1,5 @@
 .contactContainer,
 .aboutUsContainer {
-    grid-row-start: 3;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #FFFFFF;

@@ -1,7 +1,7 @@
 <?php
-	include_once('config/init.php');
-	include_once('database/property.php');
-
+	include_once('../config/init.php');
+	include_once('../database/property.php');
+	
 	$city_options = getAllCities();
 	$bedroom_options = getAllBedrooms();
 	$maxPrice = getMaxPrice();
@@ -22,7 +22,7 @@
         <input type="submit" value="Find">
         <br>
         <br>
-        <form action="filter_properties.php" method="get">
+        <form action="searchPage.php" method="get">
         	<label for="bedrooms"> Bedrooms</label>
         	<br>
         	<select id="bedrooms" name="bedrooms">
@@ -41,7 +41,6 @@
         	<label for="local">Location</label>
 			<br>
 			<select id="local" name="local" size="1">
-				
     		<option value="-" <?php if($local == "-"):
     			?> selected="selected"<?php endif;?>>-</option>
 
@@ -53,7 +52,6 @@
     			    </option>
     			<?php } ?>
 			</select>
-
 			<br>
         	<br>
         	<label for="price">Max.Price Per Day</label><br>

@@ -87,7 +87,6 @@ footer {
 }
 
 .register, .loginContainer{
-    grid-row-start: 3;
     background-color: #FFFFFF;
 
 }
@@ -106,7 +105,7 @@ footer {
 .loginContainer input[type=text],
 .loginContainer input[type=password]{
 
-    margin: 6% 3%;
+    margin: 6% 6%;
     background: #FFFFFF;
 
 }
@@ -121,7 +120,6 @@ footer {
 
 .rents{
   padding:1em;
-  grid-row-start: 3;
   column-count:2;
   column-rule: 2px solid #d3d3d3;
   border-style: double;

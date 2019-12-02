@@ -1,6 +1,6 @@
 <?php
-  include_once('config/init.php');
-  include_once('database/user.php');
+  include_once('../config/init.php');
+  include_once('../database/user.php');
   
   $username = trim(strip_tags($_POST['username']));
   $password = $_POST['password'];  
@@ -13,5 +13,5 @@
     $_SESSION['error_messages'][] = "Login Failed!";
   }
   
-  header('Location: MainPage.php');  
+  header('Location: ../pages/mainPage.php');  
 ?>
