@@ -3,12 +3,12 @@
     include_once('../database/image.php');
 ?>
 
-<div class="feed">
+<div class="results">
     
 <?php
     foreach( $properties as $property){
         $imgs = getAllImgsProperty( $property['propertyID']);?>
-        <article id="feed">
+        <article>
             <h1><?= $property['address'] ?></h1>
             <p>propertyID: <?= $property['propertyID'] ?></p>
             <p>ownerID: <?= $property['ownerID'] ?></p>
