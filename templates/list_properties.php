@@ -1,8 +1,11 @@
 <?php
-
     include_once('../config/init.php');
     include_once('../database/image.php');
+?>
 
+<div class="feed">
+    
+<?php
     foreach( $properties as $property){
         $imgs = getAllImgsProperty( $property['propertyID']);?>
         <article id="feed">
@@ -25,3 +28,5 @@
         </article>
     <?php }
 ?>
+
+</div>
