@@ -197,6 +197,7 @@ form input.invalid+.hint {
 
 .property input[type=submit] {
     background-color: #4CAF50;
+    border-radius: 0.5em;
     color: white;
     padding: 12px 20px;
     width: 100px;
@@ -208,16 +209,10 @@ form input.invalid+.hint {
     margin: auto auto;
     width: 25%;
     padding: 1em;
-    background-color: #ECECEC;
-    border: 1px solid #DEDEDE;
-    border-radius: 1em;
-    -webkit-box-shadow: 10px 10px 38px -30px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 10px 10px 38px -30px rgba(0, 0, 0, 1);
-    box-shadow: 10px 10px 38px -30px rgba(0, 0, 0, 1);
+
 }
 
 .information,
-.extras,
 .totalPrice {
     margin: auto auto;
     margin-top: 1em;
@@ -229,5 +224,8 @@ form input.invalid+.hint {
     -moz-box-shadow: 2px 2px 13px 0px rgba(0, 0, 0, 0.56);
     box-shadow: 2px 2px 13px 0px rgba(0, 0, 0, 0.56);
     border-radius: 1em;
+}
 
+.extras {
+    border-top: 1px dotted grey;
 }
