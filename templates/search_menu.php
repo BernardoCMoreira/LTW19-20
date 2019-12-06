@@ -16,11 +16,14 @@
 ?>
 
     <div class="searchbar">
-        <label for="search">Search</label><br>
-        <input type="text" id="search" name="search" placeholder="...">
-        <input type="submit" value="Find">
+        <label for="date"> Starting Date</label><br>
+        <input type="date" id="date" name="date" >
         <br>
+		<br>
+		<label for="date"> End Date</label><br>
+        <input type="date" id="date" name="date" >
         <br>
+		<br>
         <form action="searchPage.php" method="get">
         	<label for="bedrooms"> Bedrooms</label>
         	<br>
@@ -58,6 +61,8 @@
         	    min= <?= $minPrice ?>
         	    max= <?= $maxPrice ?>
         	    value=<?= $price ?>>
+				<br>
+				<br>
         	<input type="submit" value="Search">
     	</form>
 	</div>	
