@@ -37,7 +37,7 @@
 		$src_img = "../images/" .  $img['imageID']  . ".jpg";
 
 		echo '<article>';
-        echo '<h1> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '"</a>' . $property['address'] . '</h1>';
+        echo '<h1> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h1>';
         echo '<p>Location: ' . $property['city'] . ', ' . $property['country'] . '</p>';
         echo '<p>Number of bedrooms: ' .  $property['numQuartos'] . '</p>';
         echo '<p>Description: ' .  $property['description'] . ' </p>';
