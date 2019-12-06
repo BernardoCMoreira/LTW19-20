@@ -193,10 +193,6 @@ form input.invalid+.hint {
 
     margin-top: 2em;
     border: 1px solid #FFFFFF;
-    border-radius: 1em;
-    -webkit-box-shadow: 10px 10px 38px -30px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 10px 10px 38px -30px rgba(0, 0, 0, 1);
-    box-shadow: 10px 10px 38px -30px rgba(0, 0, 0, 1);
 }
 
 .property input[type=submit] {
@@ -223,15 +219,15 @@ form input.invalid+.hint {
 .information,
 .extras,
 .totalPrice {
-    margin-top: 3em;
+    margin: auto auto;
+    margin-top: 1em;
     padding: 1em;
-    border: 5px solid grey;
+    width: 75%;
     text-align: center;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
+    -webkit-box-shadow: 2px 2px 13px 0px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 2px 2px 13px 0px rgba(0, 0, 0, 0.56);
+    box-shadow: 2px 2px 13px 0px rgba(0, 0, 0, 0.56);
+    border-radius: 1em;
 
-}
-
-.information p,
-.extras p {
-    text-align: center;
 }

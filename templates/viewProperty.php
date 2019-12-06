@@ -1,6 +1,5 @@
 <br> 
     <div class=property>
-    <article>
             
             <h1>Largo de Ramos 18611</h1>
             <ul class="imgs">
@@ -36,5 +35,4 @@
                 <h2>Total: 450*Days €
             </div>  
             <input type="submit" value="Rent">
-        </article>
     </div>
