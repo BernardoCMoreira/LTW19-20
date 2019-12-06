@@ -17,7 +17,7 @@
             <br>
             </div>
             <div class="information">
-                <div class="first">
+                <div class="princip">
                 <h3>Information</h3>
                 <p>Vila Nova de Gaia, Portugal</p>
                 <p>Bedrooms: 2</p>
@@ -25,7 +25,7 @@
                 <p>Description: Casa também agradavel</p>
                 <p>Price Per Day: 450.0€</p>
                 </div>
-                <div class="extras">
+                <div class="extra">
                 <h3>Extras</h3>
                 <p>Wi-Fi</p>
                 <p>TV</p>
