@@ -14,15 +14,26 @@
     font-size: 100%;
 }
 
-.feed {
+.results {
     grid-column: 2;
+
+}
+
+.results ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+article h1 {
+    text-shadow: 1px 1px grey;
 }
 
 article p {
     text-align: left;
-    text-shadow: 1px 1px grey;
 }
 
 article img {
     border: 1px solid #FFFFFF;
+
+
 }
