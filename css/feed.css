@@ -16,7 +16,6 @@
 
 .results {
     grid-column: 2;
-
 }
 
 .results ul {
@@ -30,8 +29,10 @@ article {
     margin-bottom: 1%;
 }
 
-article h1 {
+article a {
+    color: black;
     text-shadow: 1px 1px grey;
+    text-decoration: none;
 }
 
 article p {
