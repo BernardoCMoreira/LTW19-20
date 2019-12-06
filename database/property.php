@@ -24,6 +24,32 @@
     return $stmt->fetchAll();
   }
 
+  function getRandomNumberOfProperties($numberOfProperties) {
+    global $conn;
+    
+    $stmt = $conn->prepare('SELECT * FROM property ORDER BY random() LIMIT ?');
+    $stmt->execute(array($numberOfProperties));
+    return $stmt->fetchAll();
+  }
+
+	function displayProperty($property) {
+		$img = getFirstImgOfProperty( $property['propertyID']);
+		$src_img = "../images/" .  $img['imageID']  . ".jpg";
+
+		echo '<article>';
+        echo '<h1> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h1>';
+        echo '<p>Location: ' . $property['city'] . ', ' . $property['country'] . '</p>';
+        echo '<p>Number of bedrooms: ' .  $property['numQuartos'] . '</p>';
+        echo '<p>Description: ' .  $property['description'] . ' </p>';
+    	echo '<p>Price: ' .  $property['price'] . '</p>';
+	    echo '<ul class="imgs">';
+		echo '<li>';
+		echo '<img src=' . $src_img . ' alt="house" width="500" height="300" />';
+		echo '</li>';
+		echo '</ul>';
+		echo '</article>';
+	}
+
   /*function getProperty($propertyID) {
     global $conn;
     

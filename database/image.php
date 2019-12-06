@@ -39,6 +39,13 @@
     $stmt->execute(array($propertyID));
     return $stmt->fetchAll();
   }
-
+  
+	function getFirstImgOfProperty($propertyID) {
+    	global $conn;
+    
+		$stmt = $conn->prepare('SELECT * FROM image WHERE propertyID = ?');
+		$stmt->execute(array($propertyID));
+		return $stmt->fetch();
+	}
 
 ?>

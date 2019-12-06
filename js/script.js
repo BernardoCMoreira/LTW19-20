@@ -12,7 +12,7 @@ register.addEventListener('submit', validateRegister, false);
 
 
 function validateUsername() {
-  if (!/^[a-z]{3,}$/.test(this.value))
+  if (!/^[a-zA-Z0-9]{3,}$/.test(this.value))
     this.classList.add('invalid');
   else
     this.classList.remove('invalid');
