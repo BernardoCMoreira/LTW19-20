@@ -9,7 +9,7 @@
     foreach( $properties as $property){
         $imgs = getAllImgsProperty( $property['propertyID']);?>
         <article>
-            <h1><?= $property['address'] ?></h1>
+            <h1><a href="../pages/viewProperty.php"><?= $property['address'] ?></a></h1>
             <p>propertyID: <?= $property['propertyID'] ?></p>
             <p>ownerID: <?= $property['ownerID'] ?></p>
             <p>city: <?= $property['city'] ?></p>
