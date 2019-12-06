@@ -15,7 +15,6 @@
     	$price = ($maxPrice + $minPrice) /2;
 ?>
 
-<div class="mainpage">
     <div class="searchbar">
         <label for="search">Search</label><br>
         <input type="text" id="search" name="search" placeholder="...">
@@ -62,4 +61,3 @@
         	<input type="submit" value="Search">
     	</form>
 	</div>	
-</div>	
