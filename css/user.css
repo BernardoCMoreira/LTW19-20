@@ -4,23 +4,21 @@
 	background-color: #FFFFFF;
 }
 
-.userprofile > .profile_photo > img {
+.userprofile > form > .profile_photo > img {
 	text-align: left;
 	border-radius:50%;
-	padding:1em;
+
 }
 
-.userprofile > .profile_photo > input[type=file],
-.userprofile > .profile_photo > label[for=picture] {
+.userprofile > form > .profile_photo > input[type=file],
+.userprofile > form > .profile_photo > label[for=picture] {
 	width: 50%;
 	padding: 2px;
 	margin-top: 2px;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
-.userprofile > * > input[type=text],
-.userprofile > * > select,
-.userprofile > * > textarea {
+.userprofile > form > * > input[type=text] {
 	width: 100%;
     padding-top: 1em;
 	padding-bottom: 1em;
@@ -30,7 +28,7 @@
     resize: vertical;
 }
 
-.userprofile > .description > input[type=submit] {
+.userprofile > form > input {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;

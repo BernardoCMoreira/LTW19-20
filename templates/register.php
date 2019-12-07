@@ -3,7 +3,7 @@
     <form action="../actions/action_register.php" method="post">
         <label>
             Username: <input type="text" name="username" required>
-            <span class="hint">Only lowercase, at least 3 characters</span>
+            <span class="hint">At least 3 characters</span>
         </label>
         <br>
         <label>

@@ -7,7 +7,7 @@
 
     if (isset($_SESSION['username'])){
       $user = getUser($_SESSION['username']);
-      include ('../templates/user.php');
+      include ('../templates/user_edit.php');
     }
     else  
       header('Location: ../pages/register.php');  
