@@ -88,6 +88,7 @@ INSERT INTO rent VALUES (2, 2, 4, "2020-01-01", "2020-01-31", "2019-12-01", 425)
 INSERT INTO rent VALUES (3, 2, 1, "2019-10-01", "2019-10-31", "2019-09-30", 300);
 INSERT INTO rent VALUES (4, 7, 7, "2019-10-01", "2019-10-11", "2019-09-30", 1700);
 INSERT INTO rent VALUES (5, 5, 9, "2020-03-15", "2020-04-01", "2020-03-10", 2000);
+INSERT INTO rent VALUES (6, 5, 1, "2020-03-01", "2020-03-02", "2020-02-29", 200);
 
 INSERT INTO rating VALUES (1, 4.5, "Realmente bastante agradável");
 INSERT INTO rating VALUES (3, 5, "Realmente bastante agradável");
