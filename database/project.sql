@@ -76,17 +76,25 @@ INSERT INTO user (userID, email, username, password, name) VALUES (26, "up201704
 
 INSERT INTO property VALUES (1, 1, "Rua Dr. Roberto Frias, s/n 4200-465", "Porto", "Portugal", 3, "Casa agradável", 500);
 INSERT INTO property VALUES (2, 3, "Largo de Ramos 1861","Vila Nova de Gaia", "Portugal", 2, "Casa também agradavel", 450);
+INSERT INTO property VALUES (3, 2, "Largo dos Aviadores ","Vila Nova de Gaia", "Portugal", 4, "Casa apropriada para familias", 350);
+INSERT INTO property VALUES (4, 4, "Rua de São Pedro ","Alvalade", "Portugal", 2, "Casa apropriada para familias", 400);
+INSERT INTO property VALUES (5, 7, "Rua do Jardim","Mealhada", "Portugal", 1, "Desfrute de umas férias cheias de leitão", 150);
+INSERT INTO property VALUES (6, 7, "Rua António Martins Soares Leite ","Santa Maria da Feira", "Portugal", 3, "Casa acolhedora com vista para o castelo", 200);
+INSERT INTO property VALUES (7, 3, "Rua Fonte da Ribeira","Ovar", "Portugal", 4, "Casa moderna, estrategicamente localizada entre um ginásio e a melhor pastelaria de pão de ló", 170);
+INSERT INTO property VALUES (8, 7, "Rua Dom Afonso Henriques ","Arouca", "Portugal", 3, "Casa com vista para o monte. Excelente para desfrutar de umas férias sossegadas", 250);
 
 INSERT INTO rent VALUES (1, 1, 2, "2019-12-20", "2019-12-31", "2019-12-18", 400);
 INSERT INTO rent VALUES (2, 2, 4, "2020-01-01", "2020-01-31", "2019-12-01", 425);
 INSERT INTO rent VALUES (3, 2, 1, "2019-10-01", "2019-10-31", "2019-09-30", 300);
+INSERT INTO rent VALUES (4, 7, 7, "2019-10-01", "2019-10-11", "2019-09-30", 1700);
+INSERT INTO rent VALUES (5, 5, 9, "2020-03-15", "2020-04-01", "2020-03-10", 2000);
 
 INSERT INTO rating VALUES (1, 4.5, "Realmente bastante agradável");
 INSERT INTO rating VALUES (3, 5, "Realmente bastante agradável");
+INSERT INTO rating VALUES (5, 1, "Nunca vi tantas centopeias e aranhas na minha vida. Estado lastimável!");
 
 INSERT INTO image VALUES ( 1, 1, 1, 1);
 INSERT INTO image VALUES ( 2, 2, 3, 1);
-
 
 CREATE TRIGGER rattingValidation
 BEFORE INSERT on rating
