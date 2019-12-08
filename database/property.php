@@ -83,7 +83,7 @@
   function getAllCities() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT city FROM property ORDER BY city ASC');
+    $stmt = $conn->prepare('SELECT DISTINCT city FROM property ORDER BY city ASC');
     $stmt->execute();
     return $stmt->fetchAll();
   }
@@ -91,7 +91,7 @@
   function getAllBedrooms() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT numQuartos FROM property ORDER BY numQuartos ASC');
+    $stmt = $conn->prepare('SELECT DISTINCT numQuartos FROM property ORDER BY numQuartos ASC');
     $stmt->execute();
     return $stmt->fetchAll();
   }
@@ -99,7 +99,7 @@
   function getMaxPrice() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT max(price) AS max FROM property');
+    $stmt = $conn->prepare('SELECT DISTINCT max(price) AS max FROM property');
     $stmt->execute();
     $max = $stmt->fetch();
     return $max['max']; 
@@ -108,7 +108,7 @@
   function getMinPrice() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT min(price) AS min FROM property');
+    $stmt = $conn->prepare('SELECT DISTINCT min(price) AS min FROM property');
     $stmt->execute();
     $min = $stmt->fetch();
     return $min['min']; 
