@@ -80,6 +80,7 @@ body>header a {
 }
 
 footer {
+    margin-top: 1em;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 4;
