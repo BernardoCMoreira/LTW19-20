@@ -5,6 +5,7 @@ CREATE TABLE user(
   username VARCHAR UNIQUE NOT NULL,
   password VARCHAR NOT NULL,
   name VARCHAR,
+  description VARCHAR,
   photo STRING DEFAULT "default_user.jpg"
 );
 

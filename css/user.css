@@ -18,7 +18,8 @@
     margin-bottom: 15px;
 }
 
-.userprofile > form > * > input[type=text] {
+.userprofile > form > * > input[type=text],
+.userprofile > form > * > input[type=password] {
 	width: 100%;
     padding-top: 1em;
 	padding-bottom: 1em;
@@ -34,4 +35,25 @@
     padding: 12px 20px;
     border: none;
     cursor: pointer;
+}
+
+
+form > div > .hint {
+    font-size: 0.6em;
+    padding: 0.5em;
+    align-self: center;
+    visibility: visible;
+    display: contents;
+   /* visibility: hidden;
+    display: none;*/
+}
+
+form > div > input.invalid {
+    border: 1px solid red;
+    box-shadow: red 0 0 2px 2px;
+}
+
+form > div > input.invalid+.hint {
+    display: contents;
+    visibility: visible;
 }

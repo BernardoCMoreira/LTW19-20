@@ -10,9 +10,32 @@
       <input type="file" name="fileToUpload" id="fileToUpload">
     </div>
 
-    <div class="name">
-        <label>Name:</label>
-        <input type="text" name="name" placeholder="<?=$user['name']?>">  
+    <div class="edit_username">
+      <label>Username:</label>
+      <span class="hint">At least 3 characters</span>  
+      <input type="text" name="username" placeholder="<?=$user['username']?>">
+    </div>
+
+    <div class="edit_password">
+      <label>Password:</label>
+      <span class="hint">One uppercase, 1 symbol, 1 number, at least 8 characters</span> 
+      <input type="password" name="password" placeholder="¯\_(ツ)_/¯"> 
+    </div>
+
+    <div class="edit_name">
+      <label>Name:</label>
+      <input type="text" name="name" placeholder="<?=$user['name']?>">  
+    </div>
+
+    <div class="edit_email">
+    <label>email:</label>
+      <span class="hint">Invalid email</span>
+      <input type="text" name="email" placeholder="<?=$user['email']?>">  
+    </div>
+
+    <div class="edit_description">
+    <label>Description:</label>
+      <input type="text" name="description" placeholder="<?=$user['description']?>">  
     </div>
   
     <input type="submit" value="Done">
