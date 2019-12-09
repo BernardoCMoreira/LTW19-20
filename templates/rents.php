@@ -1,13 +1,12 @@
 <br>
 <div class=rents>
 	<div class=owns>
-		<h3>Owner houses</h3>
+		<h3>Owner properties</h3>
 <?php
 	if(isset($_SESSION['username'])) {
-//		$properties = getAllPropertiesFromUsername($_SESSION['username']);
-		$properties = getAllPropertiesFromUsername("andreRestivo");
+		$properties = getAllPropertiesFromUsername($_SESSION['username']);
 		foreach($properties as $property) {
-			echo '<div id=property' . $property["propertyID"] . '>';
+			echo '<div class=propertyInfo>';
 			displayUserSProperty($property);
 			$rents = getAllRentsOfProperty($property);
 			foreach($rents as $rent) {
@@ -20,16 +19,12 @@
 	</div>
 
 	<div class=rented>
-		<h3>Rented houses</h3>
-
+		<h3>Rented </h3>
 <?php
 	if(isset($_SESSION['username'])) {
-//		$rents = getAllTouristRentsFromUser($_SESSION['username']);
-		$rents = getAllTouristRentsFromUser("andreRestivo");
+		$rents = getAllTouristRentsFromUser($_SESSION['username']);
 		foreach($rents as $rent) {
-			echo '<div id=rent' . $rent["rentID"] . '>';
-			displayPropertySRent($rent);
-			echo '</div>';
+			displaytouristSRent($rent);
 		}
 	}
 ?>
