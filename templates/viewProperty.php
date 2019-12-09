@@ -1,39 +1,39 @@
-<br> 
-    <div class=property>
-            
-            <h1>Largo de Ramos 18611</h1>
-            <ul class="imgs">
-                                    <li>
-                        <img src="../images/2.jpg" alt="house " width="500" height="300">
-                    </li>
-                            </ul>
-            <div class="dates">
-            <label for="date"> Starting Date</label><br>
-            <input type="date" id="date" name="date" >
-            <br>
-            <br>
-            <label for="date"> End Date</label><br>
-            <input type="date" id="date" name="date" >
-            <br>
-            </div>
-            <div class="information">
-                <div class="princip">
-                <h3>Information</h3>
-                <p>Vila Nova de Gaia, Portugal</p>
-                <p>Bedrooms: 2</p>
-                <p>Bathrooms: 1</p>
-                <p>Description: Casa também agradavel</p>
-                <p>Price Per Day: 450.0€</p>
-                </div>
-                <div class="extra">
-                <h3>Extras</h3>
-                <p>Wi-Fi</p>
-                <p>TV</p>
-                <p>Kitchen</p>
-                </div> 
-                </div>      
-            <div class="totalPrice">
-                <h2>Total: 450*Days €
-            </div>  
-            <input type="submit" value="Rent">
-    </div>
+<br>
+<div class=property>
+<?='<h1>' . $propertyInfo['address'] . '</h1>';?>
+	<ul class="imgs">
+<?php
+	foreach($images as $image)
+		if($image['aproved'])
+			echo '<li><img src="../images/' . $image['imageID'] . '.jpg" alt="house " width="500" height="300"></li>';
+?>
+	</ul>
+	<div class="dates">
+		<label for="date"> Starting Date</label><br>
+		<input type="date" id="startDate" name="date" value="<?php echo date("Y-m-d"); ?>">
+		<br>
+		<br>
+		<label for="date"> End Date</label><br>
+		<input type="date" id="endDate" name="date" value="<?php echo date("Y-m-d", time()+ 24*60*60); ?>">
+		<br>
+	</div>
+	<div class="information">
+		<div class="principal">
+			<h3>Information</h3>
+<?=			'<p>' . $propertyInfo['city'] . ', ' . $propertyInfo['country'] . '</p>';?>
+<?= 		'<p>Bedrooms: ' . $propertyInfo['numQuartos'] . '</p>'?>
+<?= 		'<p>Description: ' . $propertyInfo['description'] . '</p>'?>
+<?= 		'<p>Price Per Day: ' .  $propertyInfo['price'] . '</p>'?>
+		</div>
+		<div class="extra">
+			<h3>Extras</h3>
+			<p>Wi-Fi</p>
+			<p>TV</p>
+			<p>Kitchen</p>
+		</div>
+	</div>
+	<div id="totalPrice">
+<?= 	'<h2>Total Price: ' .  $propertyInfo['price'] . '€ </h2>'?>
+	</div>
+	<input type="submit" value="Rent">
+</div>
