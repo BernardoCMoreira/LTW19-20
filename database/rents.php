@@ -19,7 +19,7 @@
 	}
 
 	function displayUserSProperty($property) {
-        echo '<h1> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h1>';
+        echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h2>';
 	}
 
 	function displayPropertySRent($rent) {
@@ -45,7 +45,7 @@
 
 	function displaytouristSRent($rent) {
 		echo '<div class="rentInfo">';
-		echo 	'<p><a href="../pages/viewProperty.php?propertyID=' . $rent['propertyID']. '"> View Property </a></p> ';
+		echo 	'<h2><a href="../pages/viewProperty.php?propertyID=' . $rent['propertyID']. '">' . $rent['address'] . '</a></h2>';
 		echo 	'<p><a href="../pages/user.php?userID=' . $rent['ownerID']. '"> View Owner </a></p> ';
 		echo 	'<p>Start date: ' . $rent['startDate'] . '</p>';
 		echo 	'<p>End date: ' . $rent['endDate'] . '</p>';
