@@ -1,35 +1,53 @@
 .userprofile {
-    box-sizing: border-box;
-	padding: 4em;
-	background-color: #FFFFFF;
+    background-color: #ECE6E2;
+    border-radius: 1em;
+    padding: 2em;
+    margin: auto auto;
+    text-align: center;
+    width: 30%;
+    -webkit-box-shadow: 10px 10px 58px -19px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 10px 10px 58px -19px rgba(0, 0, 0, 0.27);
+    box-shadow: 10px 10px 58px -19px rgba(0, 0, 0, 0.27);
 }
 
-.userprofile > form > .profile_photo > img {
-	text-align: left;
-	border-radius:50%;
+.userprofile>form>.profile_photo>img {
+    width: 50%;
+    max-width: 100%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: -webkit-box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
 
 }
 
-.userprofile > form > .profile_photo > input[type=file],
-.userprofile > form > .profile_photo > label[for=picture] {
-	width: 50%;
-	padding: 2px;
-	margin-top: 2px;
+.userprofile>form>.profile_photo:hover>img {
+    -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+.userprofile>form>.profile_photo>input[type=file],
+.userprofile>form>.profile_photo>label[for=picture] {
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
     margin-bottom: 15px;
+
 }
 
-.userprofile > form > * > input[type=text],
-.userprofile > form > * > input[type=password] {
-	width: 100%;
+.userprofile>form>*>input[type=text],
+.userprofile>form>*>input[type=password] {
+    width: 100%;
     padding-top: 1em;
-	padding-bottom: 1em;
+    padding-bottom: 1em;
     border: 1px solid #ccc;
     margin-top: 5px;
     margin-bottom: 15px;
     resize: vertical;
 }
 
-.userprofile > form > input {
+.userprofile>form>input {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -38,22 +56,28 @@
 }
 
 
-form > div > .hint {
+form>div>.hint {
     font-size: 0.6em;
     padding: 0.5em;
     align-self: center;
     visibility: visible;
     display: contents;
-   /* visibility: hidden;
-    display: none;*/
 }
 
-form > div > input.invalid {
+form>div>input.invalid {
     border: 1px solid red;
     box-shadow: red 0 0 2px 2px;
 }
 
-form > div > input.invalid+.hint {
+form>div>input.invalid+.hint {
     display: contents;
     visibility: visible;
+}
+
+.user_info {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-top: 2px dotted grey;
+    border-bottom: 2px dotted grey;
 }

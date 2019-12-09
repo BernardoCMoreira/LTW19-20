@@ -219,6 +219,12 @@ form input.invalid+.hint {
     text-align: center;
 }
 
+input[type=submit]:hover,
+input[type=button]:hover {
+    background-color: #006233;
+    color: white;
+}
+
 .dates {
     margin: auto auto;
     width: 25%;
