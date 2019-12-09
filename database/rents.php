@@ -24,7 +24,6 @@
 
 	function displayPropertySRent($rent) {
 		echo '<div class="rent">';
-		echo 	'<p><a href="../pages/viewProperty.php?propertyID=' . $rent['propertyID']. '"> View Property </a></p> ';
 		echo 	'<p><a href="../pages/user.php?userID=' . $rent['touristID']. '"> View Tourist </a></p> ';
 		echo 	'<p>Start date: ' . $rent['startDate'] . '</p>';
 		echo 	'<p>End date: ' . $rent['endDate'] . '</p>';
