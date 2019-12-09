@@ -1,7 +1,7 @@
 <br>
 <div class=rents>
 	<div class=owns>
-		<h3>Owner properties</h3>
+		<h1>Owner properties</h1>
 <?php
 	if(isset($_SESSION['username'])) {
 		$properties = getAllPropertiesFromUsername($_SESSION['username']);
@@ -19,7 +19,7 @@
 	</div>
 
 	<div class=rented>
-		<h3>Rented </h3>
+		<h1>Rented properties</h1>
 <?php
 	if(isset($_SESSION['username'])) {
 		$rents = getAllTouristRentsFromUser($_SESSION['username']);
