@@ -50,13 +50,13 @@
 		echo '</article>';
 	}
 
-  /*function getProperty($propertyID) {
-    global $conn;
+  	function getPropertyInfo($propertyID) {
+    	global $conn;
     
-    $stmt = $conn->prepare('SELECT * FROM property WHERE propertyID = ?');
-    $stmt->execute(array($propertyID));
-    return $stmt->fetch();  
-  }*/
+      $stmt = $conn->prepare('SELECT * FROM property WHERE propertyID = ?');
+		  $stmt->execute(array($propertyID));
+    	return $stmt->fetch();  
+	}
 
   function getAllPropertiesFilter($bedrooms, $local, $price) {
     global $conn;
