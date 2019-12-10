@@ -22,8 +22,10 @@
 }
 
 body {
-    background-color: #EDEFF0;
+    background-color: #1d4769;
 }
+
+
 
 body>header {
     background-color: var(--section-logocolor-1);
@@ -62,6 +64,7 @@ body>header a {
 #menu>ul>li {
 
     font-family: 'Georgia';
+    font-size: 20px;
     width: 100%;
     font-weight: 700;
     text-align: center;
@@ -139,7 +142,7 @@ footer {
     border-width: 2%;
     border-radius: 0.5em;
     border-color: #d3d3d3;
-    background-color: #89AEB2;
+    background-color: #eff7fa;
 }
 
 .owns {
@@ -299,4 +302,17 @@ input[type=button]:hover {
 
 .color p {
     display: none;
+}
+
+.usernameContainer form {
+    color: black;
+}
+
+ul.active li {
+    transform: translateY(-30px);
+
+}
+
+.rent.dark {
+    background-color: black;
 }

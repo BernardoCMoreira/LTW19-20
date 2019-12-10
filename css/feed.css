@@ -7,11 +7,18 @@
 }
 
 .searchbar {
+    text-align: left;
     grid-column: 1;
-    padding: 15px;
+    padding: 2em;
     background-color: #ECE6E2;
     margin-bottom: 2%;
-    font-size: 100%;
+    font-size: 20px;
+}
+
+.searchbar input[type="submit"] {
+    border-radius: 0.5em;
+    width: 10em;
+    height: 2.5em;
 }
 
 .results {
@@ -25,7 +32,7 @@
 
 article {
     padding: 10px;
-    background-color: #DEDEDE;
+    background-color: #eff7fa;
     margin-bottom: 1%;
 }
 
