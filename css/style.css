@@ -4,7 +4,6 @@
 @import url("layout.css");
 @import url("sign.css");
 
-
 :root {
     --main-color-dark: #2A2F33;
     --main-color-1: #046DD5;
@@ -75,6 +74,15 @@ body>header a {
     padding: 1em;
 }
 
+#menu>ul>li:hover {
+    background-color: #DFC7C1;
+}
+
+#menu>ul>li>a:hover {
+    color: #ECE6E2;
+
+}
+
 #menu>ul>li>a {
     color: black;
     text-decoration: none;
@@ -129,13 +137,16 @@ footer {
     grid-template-rows: auto;
     border-style: double;
     border-width: 2%;
+    border-radius: 0.5em;
     border-color: #d3d3d3;
+    background-color: #89AEB2;
 }
 
 .owns {
     padding: 1em;
     grid-column: 1;
     border-right: 2px solid #d3d3d3;
+
 }
 
 .rented {
@@ -146,9 +157,14 @@ footer {
 
 .owns h1,
 .rented h1 {
+    text-align: center;
     margin-top: 1em;
-    background-color: #d3d3d3;
+    border-radius: 0.2em;
+    color: black;
+
 }
+
+
 
 
 form .hint {
@@ -182,7 +198,7 @@ form input.invalid+.hint {
     text-align: center;
     grid-row: 3;
     padding: 10px;
-    background-color: #DEDEDE;
+    background-color: #e6e7e5;
     margin-bottom: 1%;
     -webkit-box-shadow: 8px 7px 20px 0px rgba(0, 0, 0, 0.56);
     -moz-box-shadow: 8px 7px 20px 0px rgba(0, 0, 0, 0.56);
@@ -233,7 +249,7 @@ input[type=button]:hover {
 }
 
 .information,
-.totalPrice {
+#totalPrice>h2 {
     margin: auto auto;
     margin-top: 1em;
     padding: 1em;
@@ -254,21 +270,33 @@ input[type=button]:hover {
 .rents a {
     text-decoration: none;
     color: black;
-    border-radius: 0.5em;
-    background-color: #ECE6E2;
+
+}
+
+.rents a:hover {
+    color: #89AEB2;
 }
 
 .propertyInfo,
 .rentInfo {
     padding: 1em;
-    border-bottom: 2px dotted grey;
+    border-radius: 0.5em;
+    background-color: #EEE4E1;
+    -webkit-box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
+    margin-bottom: 1em;
+
+
+
 }
 
 .rent {
     padding: 0.5em;
     margin-top: 1em;
-    border-radius: 1em;
-    -webkit-box-shadow: -5px 4px 86px -64px rgba(0, 0, 0, 0.67);
-    -moz-box-shadow: -5px 4px 86px -64px rgba(0, 0, 0, 0.67);
-    box-shadow: -5px 4px 86px -64px rgba(0, 0, 0, 0.67);
+
+}
+
+.color p {
+    display: none;
 }

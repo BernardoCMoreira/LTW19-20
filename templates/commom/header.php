@@ -32,7 +32,11 @@
             ?>
         </div>
     </header>
-
+    <section class="sky">
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    </section>
+                   
     <nav id="menu">
         <ul>
             <li><a href="user.php">User</a></li>
