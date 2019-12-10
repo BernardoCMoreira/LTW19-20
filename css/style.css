@@ -38,6 +38,7 @@ body>header {
 body>header a {
     color: var(--main-color-dark);
     text-decoration: none;
+
 }
 
 #signup a:first-child::after {
@@ -247,4 +248,27 @@ input[type=button]:hover {
 
 .extra {
     border-top: 1px dotted grey;
+}
+
+
+.rents a {
+    text-decoration: none;
+    color: black;
+    border-radius: 0.5em;
+    background-color: #ECE6E2;
+}
+
+.propertyInfo,
+.rentInfo {
+    padding: 1em;
+    border-bottom: 2px dotted grey;
+}
+
+.rent {
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 1em;
+    -webkit-box-shadow: -5px 4px 86px -64px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: -5px 4px 86px -64px rgba(0, 0, 0, 0.67);
+    box-shadow: -5px 4px 86px -64px rgba(0, 0, 0, 0.67);
 }
