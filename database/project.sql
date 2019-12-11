@@ -16,7 +16,7 @@ CREATE TABLE property (
     address VARCHAR  NOT NULL,
     city VARCHAR NOT NULL,
     country VARCHAR NOT NULL,
-    numQuartos INTEGER,
+    numQuartos INTEGER NOT NULL,
     description VARCHAR,
     price FLOAT NOT NULL
 );
@@ -44,6 +44,7 @@ CREATE TABLE image (
     imageID INTEGER  PRIMARY KEY,
     propertyID INTEGER REFERENCES property(propertyID),
     userID INTEGER REFERENCES user(userID),
+    type STRING NOT NULL,
     aproved BOOLEAN      
 );
 
@@ -95,8 +96,8 @@ INSERT INTO rating VALUES (1, 4.5, "Realmente bastante agradável");
 INSERT INTO rating VALUES (3, 5, "Realmente bastante agradável");
 INSERT INTO rating VALUES (5, 1, "Nunca vi tantas centopeias e aranhas na minha vida. Estado lastimável!");
 
-INSERT INTO image VALUES ( 1, 1, 1, 1);
-INSERT INTO image VALUES ( 2, 2, 3, 1);
+INSERT INTO image VALUES ( 1, 1, 1, ".jpg", 1);
+INSERT INTO image VALUES ( 2, 2, 3, ".jpg", 1);
 
 CREATE TRIGGER rattingValidation
 BEFORE INSERT on rating
