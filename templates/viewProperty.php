@@ -5,7 +5,7 @@
 <?php
 	foreach($images as $image)
 		if($image['aproved'])
-			echo '<li><img src="../images/' . $image['imageID'] . '.jpg" alt="house " width="500" height="300"></li>';
+			echo '<li><img src="../images/' . $image['imageID'] . $image['type'] . '" alt="house " width="500" height="300"></li>';
 ?>
 	</ul>
 	<div class="dates">

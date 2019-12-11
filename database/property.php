@@ -8,13 +8,14 @@
     return $num['COUNT(*)'];
   }
 
-  /*function createProperty($propertyID, $ownerID, $address, $city, $country, $numQuartos, $description, $price) {
+  function createProperty($ownerID, $address, $city, $country, $numQuartos, $description, $price) {
     global $conn;  
     $propertyID = getLenghtProperties() +1;
 
     $stmt = $conn->prepare('INSERT INTO property VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
     $stmt->execute(array($propertyID, $ownerID, $address, $city, $country, $numQuartos, $description, $price));
-  }*/
+    return $propertyID;
+  }
 
   function getAllProperties() {
     global $conn;
@@ -34,7 +35,7 @@
 
 	function displayProperty($property) {
 		$img = getFirstImgOfProperty( $property['propertyID']);
-		$src_img = "../images/" .  $img['imageID']  . ".jpg";
+		$src_img = "../images/" .  $img['imageID']  .  $img['type'];
 
 		echo '<article>';
         echo '<h1> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h1>';

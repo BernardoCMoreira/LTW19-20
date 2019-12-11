@@ -2,7 +2,7 @@
 <div class="userprofile">
   <form action="../actions/action_edit_profile.php" method="post" enctype="multipart/form-data">
     
-  <div class="profile_photo">
+    <div class="profile_photo">
       <?php 
         $src_img = "../images/" .  $user['photo'];
         echo '<img src=' . $src_img . ' alt="Logo " width="150" height="150" />'; 
@@ -12,14 +12,14 @@
 
     <div class="edit_username">
       <label>Username:</label>
-      <span class="hint">At least 3 characters</span>  
       <input type="text" name="username" placeholder="<?=$user['username']?>">
+      <span class="hint">At least 3 characters</span>  
     </div>
 
     <div class="edit_password">
       <label>Password:</label>
-      <span class="hint">One uppercase, 1 symbol, 1 number, at least 8 characters</span> 
       <input type="password" name="password" placeholder="¯\_(ツ)_/¯"> 
+      <span class="hint">One uppercase, 1 symbol, 1 number, at least 8 characters</span> 
     </div>
 
     <div class="edit_name">
@@ -29,8 +29,8 @@
 
     <div class="edit_email">
     <label>email:</label>
-      <span class="hint">Invalid email</span>
       <input type="text" name="email" placeholder="<?=$user['email']?>">  
+      <span class="hint">Invalid email</span>
     </div>
 
     <div class="edit_description">

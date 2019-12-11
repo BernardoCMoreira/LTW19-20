@@ -8,14 +8,15 @@
     return $num['COUNT(*)'];
   }
 
-  /*function createImg($propertyID, $userID) {
+  function createImg($propertyID, $userID, $type) {
     global $conn;  
     $imageID = getLenghtImgs() +1;
 
-    $stmt = $conn->prepare('INSERT INTO image VALUES (?, ?, ?, ?)');
-    $stmt->execute(array($imageID, $propertyID, $userID, "0"));
+    $stmt = $conn->prepare('INSERT INTO image VALUES (?, ?, ?, ?, ?)');
+    $stmt->execute(array($imageID, $propertyID, $userID, $type,"1"));
   }
 
+/*
   function getAllImgs() {
     global $conn;
     
