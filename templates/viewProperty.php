@@ -33,7 +33,35 @@
 		</div>
 	</div>
 	<div id="totalPrice">
-<?= 	'<h2>Total Price: ' .  $propertyInfo['price'] . '€ </h2>'?>
 	</div>
 	<input type="submit" value="Rent">
 </div>
+
+<script>
+	var startDate = new Date(document.getElementById('startDate').value);
+	var endDate = new Date(document.getElementById('endDate').value);
+	
+	document.getElementById("startDate").onchange = function(event) {
+		startDate = new Date(document.getElementById('startDate').value);
+		updateTotalPrice();
+	}
+
+	document.getElementById("endDate").onchange = function(event) {
+		endDate = new Date(document.getElementById('endDate').value);
+		updateTotalPrice();
+	}
+
+	function updateTotalPrice() {
+		const dateDifference = (endDate.getTime() - startDate.getTime())/(24*60*60*1000);
+		console.log("Date diference: " + dateDifference);
+
+		var totalPriceElement = document.getElementById("totalPrice");
+		totalPriceElement.innerHTML = "";
+		let paragraph = document.createElement("h2");
+
+		const pricePerDay = "<?= $propertyInfo['price'] ?>";
+		const totalPrice = pricePerDay * dateDifference;
+		paragraph.innerHTML = "Total Price: " + totalPrice;
+		totalPriceElement.appendChild(paragraph);
+	}
+</script>
