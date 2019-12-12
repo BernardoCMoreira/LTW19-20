@@ -11,8 +11,8 @@
     box-shadow: 10px 10px 58px -19px rgba(0, 0, 0, 0.27);
 }
 
-.userprofile>form>.profile_photo>img ,
-.addProperty>form>.property_photo>img{
+.userprofile>form>.profile_photo>img,
+.addProperty>form>.property_photo>img {
     width: 50%;
     max-width: 100%;
     -webkit-border-radius: 50%;
@@ -24,8 +24,8 @@
 
 }
 
-.userprofile>form>.profile_photo:hover>img ,
-.addProperty>form>.property_photo:hover>img{
+.userprofile>form>.profile_photo:hover>img,
+.addProperty>form>.property_photo:hover>img {
     -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
@@ -33,7 +33,7 @@
 .userprofile>form>.profile_photo>input[type=file],
 .userprofile>form>.profile_photo>label[for=picture],
 .addProperty>form>.property_photo>input[type=file],
-.addProperty>form>.property_photo>label[for=picture]  {
+.addProperty>form>.property_photo>label[for=picture] {
     width: 50%;
     padding: 2px;
     margin-top: 2px;
@@ -44,7 +44,8 @@
 .userprofile>form>*>input[type=text],
 .userprofile>form>*>input[type=password],
 .addProperty>form>*>input[type=text],
-.addProperty>form>*>input[type=password] {
+.addProperty>form>*>input[type=password],
+.addProperty>form>*>input[type=number] {
     width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
