@@ -3,14 +3,16 @@
     include_once('../database/user.php');
   
 
-    include ('../templates/commom/header.php');
-
+    
     if (isset($_SESSION['username'])){
+      include ('../templates/commom/header.php');
       $user = getUser($_SESSION['username']);
       include ('../templates/user.php');
+      include ('../templates/commom/footer.php');
     }
-    else  
+    else {
       header('Location: ../pages/register.php');  
+
+    }
       
-    include ('../templates/commom/footer.php');
 ?>
