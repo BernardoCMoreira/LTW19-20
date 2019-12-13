@@ -3,10 +3,12 @@ include_once('../config/init.php');
 include_once('../database/user.php');
 include_once('../database/property.php');
 include_once('../database/image.php');
+include_once('../database/extra.php');
 
 $ownerID = getUser($_SESSION['username'])['userID'];
 $imageID = getLenghtImgs() + 1;
 $propertyID = getLenghtProperties() + 1;
+$create = 0;
 
 if ($_FILES["fileToUpload"]["name"]) {
 
@@ -37,6 +39,7 @@ if ($_FILES["fileToUpload"]["name"]) {
                 $price = $_POST['price'];
 
                 createProperty($ownerID, $address, $city, $country, $numQuartos, $description, $price);
+                $create = 1;
             }else{
                 $_SESSION['error_messages'][] = "Error uploading data";
             }
@@ -48,5 +51,5 @@ if ($_FILES["fileToUpload"]["name"]) {
     $_SESSION['error_messages'][] = "You need to choose a photo";
 }
 
-
-header('Location: ../pages/user.php');
+if($create) header("Location: ../pages/addPropertyExtras.php?propertyID=$propertyID");
+else header('Location: ../pages/user.php');

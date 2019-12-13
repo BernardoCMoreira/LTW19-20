@@ -25,12 +25,16 @@
 <?= 		'<p>Description: ' . $propertyInfo['description'] . '</p>'?>
 <?= 		'<p>Price Per Day: ' .  $propertyInfo['price'] . '</p>'?>
 		</div>
+		<?php 
+		if($extras != null){?>
 		<div class="extra">
 			<h3>Extras</h3>
-			<p>Wi-Fi</p>
-			<p>TV</p>
-			<p>Kitchen</p>
+			<?php
+			foreach($extras as $extra)
+				echo '<p>' . $extra['name'] . '</p>';
+			?>
 		</div>
+		<?php } ?>
 	</div>
 	<div id="totalPrice">
 	</div>
