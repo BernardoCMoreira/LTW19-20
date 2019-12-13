@@ -55,7 +55,7 @@ function validateRegister(event) {
 
 (function () {
 
-  var COUNT = 300;
+  var COUNT = 1000;
   var masthead = document.querySelector('.sky');
   var canvas = document.createElement('canvas');
   var ctx = canvas.getContext('2d');
@@ -84,7 +84,6 @@ function validateRegister(event) {
     this.vy = 0;
     this.vx = 0;
     this.r = 0;
-
     this.reset();
   }
 
@@ -140,7 +139,7 @@ function validateRegister(event) {
       window.webkitRequestAnimationFrame ||
       window.mozRequestAnimationFrame ||
       function (callback) {
-        window.setTimeout(callback, 2000 / 60);
+        window.setTimeout(callback, 1000 / 60);
       };
   })();
 

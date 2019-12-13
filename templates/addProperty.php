@@ -4,7 +4,7 @@
     
     <div class="property_photo">
       <?php 
-        $src_img = "../images/default";
+        $src_img = "../images/default.png";
         echo '<img src=' . $src_img . ' alt="Logo " width="150" height="150" />'; 
       ?>
       <input type="file" name="fileToUpload" id="fileToUpload">

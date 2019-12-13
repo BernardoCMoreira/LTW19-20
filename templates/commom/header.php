@@ -33,6 +33,41 @@
         </div>
     </header>
     <section class="sky">
+        
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
+    <div class="color"><p>""</p></div>
     <div class="color"><p>""</p></div>
     <div class="color"><p>""</p></div>
     </section>
