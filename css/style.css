@@ -110,8 +110,7 @@ footer {
 .loginContainer form {
     padding: 1em;
     text-align: center;
-    width: 90%;
-    margin: 0 auto;
+    margin: auto auto;
 
 }
 
@@ -121,17 +120,16 @@ footer {
 .loginContainer input[type=text],
 .loginContainer input[type=password] {
 
-    margin: 6% 6%;
+    margin: 15px 15px;
     background: #FFFFFF;
 
 }
 
 .register label,
 .loginContainer label {
-    width: 25%;
+    width: 300px;
     text-align: right;
     display: inline-block;
-
 }
 
 .rents {
