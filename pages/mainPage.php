@@ -1,6 +1,7 @@
 <?php
 	include_once('../config/init.php');
 
+	$pageTitleExtra = "Main Page";
 	include ('../templates/commom/header.php');
 	echo '<div class="mainpage">';
 	include ('../templates/search_menu.php');

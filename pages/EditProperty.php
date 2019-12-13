@@ -5,7 +5,7 @@
 	include_once('../database/image.php');
 	include_once('../database/extra.php');
   
-
+    $pageTitleExtra = "Edit Property";
     include ('../templates/commom/header.php');
 
     if (isset($_SESSION['username'])){

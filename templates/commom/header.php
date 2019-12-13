@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        HomeFull
+        HomeFull <?= $pageTitleExtra != null ? ' - '. $pageTitleExtra : "" ?>
     </title>
     <meta charset="UTF-8">
     <link href="../css/style.css" rel="stylesheet">

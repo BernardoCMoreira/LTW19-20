@@ -8,6 +8,7 @@
 
   $properties = getAllPropertiesFilter($bedrooms, $local, $price); 
  
+  $pageTitleExtra = "Search Page";
   include ('../templates/commom/header.php');
   echo '<div class="mainpage"> ';
   include ('../templates/search_menu.php');

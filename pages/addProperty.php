@@ -2,7 +2,7 @@
     include_once('../config/init.php');
     include_once('../database/user.php');
   
-
+    $pageTitleExtra = "Add Property";
     include ('../templates/commom/header.php');
 
     if (isset($_SESSION['username'])){
