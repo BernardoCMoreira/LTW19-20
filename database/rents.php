@@ -19,13 +19,15 @@
 	}
 
 	function displayUserSProperty($property) {
-		echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a>';
-		echo '<a href="../pages/EditProperty.php?propertyID=' . $property['propertyID'] . '"> Edit </a></h2>';
+		echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a> </h2>';
+		echo '<a id="editRents" href="../pages/EditProperty.php?propertyID=' . $property['propertyID'] . '"> Edit </a>';
 	}
 
 	function displayPropertySRent($rent) {
 		echo '<div class="rent">';
+		echo '<div class="tourist">';
 		echo 	'<p><a href="../pages/user.php?userID=' . $rent['touristID']. '"> View Tourist </a></p> ';
+		echo '</div>';
 		echo 	'<p>Start date: ' . $rent['startDate'] . '</p>';
 		echo 	'<p>End date: ' . $rent['endDate'] . '</p>';
 		echo 	'<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
