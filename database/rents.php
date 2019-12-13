@@ -19,7 +19,8 @@
 	}
 
 	function displayUserSProperty($property) {
-        echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h2>';
+		echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a>';
+		echo '<a href="../pages/EditProperty.php?propertyID=' . $property['propertyID'] . '"> Edit </a></h2>';
 	}
 
 	function displayPropertySRent($rent) {

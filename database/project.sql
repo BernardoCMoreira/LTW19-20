@@ -48,6 +48,13 @@ CREATE TABLE image (
     aproved BOOLEAN      
 );
 
+drop table if exists extra;
+CREATE TABLE extra (
+    name NOT NULL,
+    propertyID INTEGER REFERENCES property(propertyID)
+);
+
+
 
 INSERT INTO user (userID, email, username, password, name) VALUES ( 1, "andreMORestivo@gmail.com", "andreRestivo", "1234", "Andre Restivo");
 INSERT INTO user (userID, email, username, password, name) VALUES ( 2, "josealves@gmail.com", "Jose001", "DrPbs74JYQQd9Jy", "Jose Alves");
@@ -98,6 +105,13 @@ INSERT INTO rating VALUES (5, 1, "Nunca vi tantas centopeias e aranhas na minha 
 
 INSERT INTO image VALUES ( 1, 1, 1, ".jpg", 1);
 INSERT INTO image VALUES ( 2, 2, 3, ".jpg", 1);
+
+INSERT INTO extra VALUES ( "Wi-Fi", 1);
+INSERT INTO extra VALUES ( "TV", 1);
+INSERT INTO extra VALUES ( "Kitchen", 1);
+INSERT INTO extra VALUES ( "Wi-Fi", 2);
+INSERT INTO extra VALUES ( "TV", 2);
+INSERT INTO extra VALUES ( "Two Kitchens", 2);
 
 CREATE TRIGGER rattingValidation
 BEFORE INSERT on rating

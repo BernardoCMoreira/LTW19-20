@@ -115,4 +115,81 @@
     return $min['min']; 
   }
 
+  function updateAdress($propertyID, $address) {
+    global $conn;
+    try {
+      $stmt = $conn->prepare('UPDATE property SET address = ? WHERE propertyID = ?');
+      if($stmt->execute(array($address, $propertyID)))
+          return true;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
+
+  function updateCity($propertyID, $city) {
+    global $conn;
+    try {
+      $stmt = $conn->prepare('UPDATE property SET city = ? WHERE propertyID = ?');
+      if($stmt->execute(array($city, $propertyID)))
+          return true;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
+
+  function updateCountry($propertyID, $country) {
+    global $conn;
+    try {
+      $stmt = $conn->prepare('UPDATE property SET country = ? WHERE propertyID = ?');
+      if($stmt->execute(array($country, $propertyID)))
+          return true;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
+
+  function updateNumQuartos($propertyID, $numQuartos) {
+    global $conn;
+    try {
+      $stmt = $conn->prepare('UPDATE property SET numQuartos = ? WHERE propertyID = ?');
+      if($stmt->execute(array($numQuartos, $propertyID)))
+          return true;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
+
+  function updatePDescription($propertyID, $description) {
+    global $conn;
+    try {
+      $stmt = $conn->prepare('UPDATE property SET description = ? WHERE propertyID = ?');
+      if($stmt->execute(array($description, $propertyID)))
+          return true;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
+
+  function updatePrice($propertyID, $price) {
+    global $conn;
+    try {
+      $stmt = $conn->prepare('UPDATE property SET price = ? WHERE propertyID = ?');
+      if($stmt->execute(array($price, $propertyID)))
+          return true;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
 ?>
