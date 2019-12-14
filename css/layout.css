@@ -18,6 +18,9 @@ header {
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto auto auto;
+
+    background: url(../images/house4.jpg);
+
 }
 
 header img {

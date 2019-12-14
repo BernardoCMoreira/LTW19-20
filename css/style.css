@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: #1d4769;
+    background-color: #416788;
 }
 
 
@@ -34,6 +34,7 @@ body>header {
     padding: 1em;
     margin: 0;
 }
+
 
 
 body>header a {
@@ -324,6 +325,16 @@ input[type=button]:hover {
 
 .usernameContainer form {
     color: black;
+
+}
+
+.usernameContainer form>input {
+    background: #DFC7C1;
+}
+
+.usernameContainer form>input:hover {
+    background: white;
+    color: #DFC7C1;
 }
 
 ul.active li {

@@ -12,9 +12,9 @@
 
 <body>
     <header>
-        <h1> <a href="../pages/mainPage.php">HomeFull </a></h1>
-        <img src="../images/logo.png" alt="Logo " width="150" height="150" />
-        
+        <a href="../pages/mainPage.php">
+        <img src="../images/logo2.png" alt="Logo " width="175" height="178" />
+        </a>   
         <div id="signup">
             <?php
                 if (isset($_SESSION['username'])){ ?>
