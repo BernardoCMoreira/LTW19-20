@@ -7,43 +7,35 @@
 
   if($_FILES["fileToUpload"]["name"]){
     
+    // Generate filename
     $target_dir = "../images/";
     $originalName = basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = pathinfo($originalName,PATHINFO_EXTENSION);
     $target_file = $target_dir . $userID . "_user." . $imageFileType ;
-    $uploadOk = 1;
-  
+
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"
-    && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF" ) {
-      $_SESSION['error_messages'][] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-      $uploadOk = 0;
-    }
-    else{
-      //Overide previous picture
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "jfif"
+    && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF" && $imageFileType != "JFIF") {
+      $_SESSION['error_messages'][] = "Sorry, only JPG, JPEG, JFIF, PNG & GIF files are allowed.";
+    }else{
+      
+      // delete past photo
       if($user_photo != 'default_user.jpg'){
         if (file_exists($target_dir . $user_photo)) {
           unlink($target_dir . $user_photo);
         }
       }
-      // Check if $uploadOk is set to 0 by an error
-      if ($uploadOk == 0) {
+
+      // Move the uploaded file to its final destination
+      move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+      // Insert image data into database
+      if(updatePhoto( $userID,  $userID . "_user." . $imageFileType)==null){
         $_SESSION['error_messages'][] = "Error uploading photo";
-
-      // if everything is ok, try to upload file
-      } else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-          if(updatePhoto( $userID,  $userID . "_user." . $imageFileType)==null){
-            $_SESSION['error_messages'][] = "Error uploading photo";
-          }
-
-        } else {
-          $_SESSION['error_messages'][] = "Error uploading photo";
-        }
       }
     }
   }
+    
   if($_POST['username']){
 
     if(updateUsername( $userID, $_POST['username'])==null){

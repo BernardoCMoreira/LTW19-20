@@ -2,11 +2,11 @@
 <div class=property>
 <?='<h1>' . $propertyInfo['address'] . '</h1>';?>
 	<ul class="imgs">
-<?php
+    <?php
 	foreach($images as $image)
-		if($image['aproved'])
-			echo '<li><img src="../images/' . $image['imageID'] . $image['type'] . '" alt="house " width="500" height="300"></li>';
-?>
+    if($image['aproved'])
+      printImage($image);
+    ?>
 	</ul>
 	<div class="dates">
 		<label for="date"> Starting Date</label><br>

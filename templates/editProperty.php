@@ -5,10 +5,10 @@
     <div class="property_photo">
     <?php
 	foreach($images as $image)
-		if($image['aproved'])
-			echo '<li><img src="../images/' . $image['imageID'] . $image['type'] . '" alt="house " width="500" height="300"></li>';
+    if($image['aproved'])
+      printImage($image);
     ?>
-        <label>Add photo:</label>
+      <label>Add photo:</label>
       <input type="file" name="fileToUpload" id="fileToUpload">
     </div>
 

@@ -16,23 +16,6 @@
     $stmt->execute(array($imageID, $propertyID, $userID, $type,"1"));
   }
 
-/*
-  function getAllImgs() {
-    global $conn;
-    
-    $stmt = $conn->prepare('SELECT * FROM image');
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
-
-  function getImg($imageID) {
-    global $conn;
-    
-    $stmt = $conn->prepare('SELECT * FROM image WHERE imageID = ?');
-    $stmt->execute(array($imageID));
-    return $stmt->fetch();  
-  }*/
-
   function getAllImgsProperty($propertyID) {
     global $conn;
     
@@ -49,4 +32,14 @@
 		return $stmt->fetch();
 	}
 
+  function printImage($image) {
+    if($image['type'] == '.mp4' || $image['type'] == '.MP4') {
+        echo '<li><video width="500" height="300" controls>
+                <source src="../images/' . $image['imageID'] . $image['type'] . '" type="video/mp4">
+                Your browser does not support the video tag.
+              </video></li>';
+    }else{
+      echo '<li><img src="../images/' . $image['imageID'] . $image['type'] . '" alt="house " width="500" height="300"></li>';
+    }
+  }
 ?>

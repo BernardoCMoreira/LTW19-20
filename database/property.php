@@ -115,7 +115,7 @@
     return $min['min']; 
   }
 
-  function updateAdress($propertyID, $address) {
+  function updateAddress($propertyID, $address) {
     global $conn;
     try {
       $stmt = $conn->prepare('UPDATE property SET address = ? WHERE propertyID = ?');
