@@ -1,16 +1,16 @@
 <?php
-  function getLenghtProperties() {
+  function getNewPropertyID() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT COUNT(*) FROM property');
+    $stmt = $conn->prepare('SELECT DISTINCT max(propertyID) AS max FROM property');
     $stmt->execute();
-    $num = $stmt->fetch();
-    return $num['COUNT(*)'];
+    $max = $stmt->fetch();
+    return $max['max']; 
   }
 
   function createProperty($ownerID, $address, $city, $country, $numQuartos, $description, $price) {
     global $conn;  
-    $propertyID = getLenghtProperties() +1;
+    $propertyID = getNewPropertyID() +1;
 
     $stmt = $conn->prepare('INSERT INTO property VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
     $stmt->execute(array($propertyID, $ownerID, $address, $city, $country, $numQuartos, $description, $price));
@@ -35,8 +35,6 @@
 
 	function displayProperty($property) {
 		$img = getFirstImgOfProperty( $property['propertyID']);
-		$src_img = "../images/" .  $img['imageID']  .  $img['type'];
-
 		echo '<article>';
         echo '<h1> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a></h1>';
         echo '<p>Location: ' . $property['city'] . ', ' . $property['country'] . '</p>';
@@ -45,7 +43,7 @@
     	echo '<p>Price: ' .  $property['price'] . '</p>';
 	    echo '<ul class="imgs">';
 		echo '<li>';
-		echo '<img src=' . $src_img . ' alt="house" width="500" height="300" />';
+		printPImage($img);
 		echo '</li>';
 		echo '</ul>';
 		echo '</article>';

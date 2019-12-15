@@ -1,19 +1,27 @@
 <?php
-  function getLenghtImgs() {
+  function getNewImageID() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT COUNT(*) FROM image');
+    $stmt = $conn->prepare('SELECT DISTINCT max(ImageID) AS max FROM image');
     $stmt->execute();
-    $num = $stmt->fetch();
-    return $num['COUNT(*)'];
+    $max = $stmt->fetch();
+    return $max['max']; 
   }
 
-  function createImg($propertyID, $userID, $type) {
+  function createImg($userORpropertyID, $userORproperty, $typefile) {
     global $conn;  
-    $imageID = getLenghtImgs() +1;
+    $imageID = getNewImageID() +1;
 
-    $stmt = $conn->prepare('INSERT INTO image VALUES (?, ?, ?, ?, ?)');
-    $stmt->execute(array($imageID, $propertyID, $userID, $type,"1"));
+    $stmt = $conn->prepare('INSERT INTO image VALUES (?, ?, ?, ?, ?, ?)');
+    if($userORproperty == 'user'){
+      $hash = 'default_user';
+      $stmt->execute(array($imageID, null, $userORpropertyID, $hash, $typefile, "1"));
+    }
+    else{
+      $hash = hash('md2', $userORproperty . $userORpropertyID . $imageID);
+      $stmt->execute(array($imageID, $userORpropertyID, null, $hash, $typefile, "1"));
+    }
+    return $hash;
   }
 
   function getAllImgsProperty($propertyID) {
@@ -32,14 +40,45 @@
 		return $stmt->fetch();
 	}
 
-  function printImage($image) {
+  function printPImage($image) {
     if($image['type'] == '.mp4' || $image['type'] == '.MP4') {
         echo '<li><video width="500" height="300" controls>
-                <source src="../images/' . $image['imageID'] . $image['type'] . '" type="video/mp4">
+                <source src="../images/' . $image['name'] . $image['type'] . '" type="video/mp4">
                 Your browser does not support the video tag.
               </video></li>';
     }else{
-      echo '<li><img src="../images/' . $image['imageID'] . $image['type'] . '" alt="house " width="500" height="300"></li>';
+      echo '<li><img src="../images/' . $image['name'] . $image['type'] . '" alt="house " width="500" height="300"></li>';
     }
   }
+
+  function printUImage($image) {
+    echo '<img src="../images/' . $image['name'] . $image['type'] . '" alt="Logo " width="150" height="150" />';
+  }
+
+  function getUserImg($userID) {
+    global $conn;
+  
+    $stmt = $conn->prepare('SELECT * FROM image WHERE userID = ?');
+    $stmt->execute(array($userID));
+    return $stmt->fetch();
+  }
+
+  function updateImg($userORpropertyID, $userORproperty, $typefile, $imageID) {
+    global $conn;
+    try {
+      $hash = hash('md2', $userORproperty . $userORpropertyID . $imageID);
+
+      if($userORproperty == 'user')
+        $stmt = $conn->prepare('UPDATE image SET name = ?, type = ? WHERE userID = ?');
+      else
+      $stmt = $conn->prepare('UPDATE image SET name = ?, type = ? WHERE propertyID = ?');
+      if($stmt->execute(array($hash, $typefile, $userORpropertyID)))
+          return $hash;
+      else
+          return false;
+    }catch(PDOException $e) {
+      return false;
+    }
+  } 
+
 ?>

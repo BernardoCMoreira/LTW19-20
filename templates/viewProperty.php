@@ -5,7 +5,7 @@
     <?php
 	foreach($images as $image)
     if($image['aproved'])
-      printImage($image);
+      printPImage($image);
     ?>
 	</ul>
 	<div class="dates">

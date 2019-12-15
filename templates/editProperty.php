@@ -6,7 +6,7 @@
     <?php
 	foreach($images as $image)
     if($image['aproved'])
-      printImage($image);
+      printPImage($image);
     ?>
       <label>Add photo:</label>
       <input type="file" name="fileToUpload" id="fileToUpload">
@@ -41,7 +41,7 @@
       <label>Price:</label>
       <input type="number" name="price"  min="0"  placeholder="<?=$propertyInfo['price']?>">
     </div>
-    <input type="hidden" name="propertyID" value="<?=$propertyInfo['propertyID']?>">
     <input type="submit" value="Done">
+    <?php echo '<input type="hidden" name="propertyID" value=' . $propertyID . '>';?>
   </form>
 </div>

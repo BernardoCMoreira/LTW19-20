@@ -5,17 +5,13 @@
   include_once('../database/image.php');
   include_once('../database/extra.php');
 
-  $ownerID = getUser($_SESSION['username'])['userID'];
-  $imageID = getLenghtImgs() + 1;
   $propertyID = $_POST['propertyID'];
-  $create = 0;
 
   if ($_FILES["fileToUpload"]["name"]) {
     // Generate filename
     $target_dir = "../images/";
     $originalName = basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = pathinfo($originalName, PATHINFO_EXTENSION);
-    $target_file = $target_dir . $imageID . "." . $imageFileType;
 
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "jfif" && $imageFileType != "mp4"
@@ -23,11 +19,14 @@
       $_SESSION['error_messages'][] = "Sorry, only JPG, JPEG, JFIF, MP4, PNG & GIF files are allowed.";
     }else{
 
+      $imageFileType = '.' . $imageFileType;
+      // Insert image data into database
+      $target_file = createImg($propertyID, 'property', $imageFileType);
+      $target_file = $target_dir . $target_file. $imageFileType;
+      
       // Move the uploaded file to its final destination
       move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 
-      // Insert image data into database
-      createImg($propertyID, $ownerID, "." . $imageFileType);
     }
   }
 
@@ -73,6 +72,7 @@
     }
 
   }
+
   header("Location: ../pages/addPropertyExtras.php?propertyID=$propertyID");
   
 ?>

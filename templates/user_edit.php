@@ -4,8 +4,7 @@
     
     <div class="profile_photo">
       <?php 
-        $src_img = "../images/" .  $user['photo'];
-        echo '<img src=' . $src_img . ' alt="Logo " width="150" height="150" />'; 
+        printUImage($image);
       ?>
       <input type="file" name="fileToUpload" id="fileToUpload">
     </div>

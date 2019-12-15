@@ -20,7 +20,7 @@
 
 	function displayUserSProperty($property) {
 		echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a> </h2>';
-		echo '<a id="editRents" href="../pages/EditProperty.php?propertyID=' . $property['propertyID'] . '"> Edit </a>';
+		echo '<a id="editRents" href="../pages/editProperty.php?propertyID=' . $property['propertyID'] . '"> Edit </a>';
 	}
 
 	function displayPropertySRent($rent) {

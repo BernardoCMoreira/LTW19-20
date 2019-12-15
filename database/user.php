@@ -1,22 +1,23 @@
 <?php
-
-  function getLenghtUsers() {
+  function getNewUserID() {
     global $conn;
     
-    $stmt = $conn->prepare('SELECT COUNT(*) FROM user');
+    $stmt = $conn->prepare('SELECT DISTINCT max(userID) AS max FROM user');
     $stmt->execute();
-    $num = $stmt->fetch();
-    return $num['COUNT(*)'];
+    $max = $stmt->fetch();
+    return $max['max']; 
   }
 
   function createUser($username, $email, $password, $name) {
     global $conn;  
-    $userID = getLenghtUsers() +1;
+    $userID = getNewUserID() +1;
 
     $options = ['cost' => 12];
     $hash = password_hash($password, PASSWORD_DEFAULT, $options);
     $stmt = $conn->prepare('INSERT INTO user (userID, email, username, password, name) VALUES (?, ?, ?, ?, ?)');
     $stmt->execute(array($userID, $email, $username, $hash, $name));
+    return $userID;
+
   }
 
   function verifyUser($username, $password) {
@@ -33,20 +34,7 @@
     $stmt->execute(array($username));
     return $stmt->fetch();
   }
-
-  function updatePhoto($userID, $photo) {
-    global $conn;
-    try {
-      $stmt = $conn->prepare('UPDATE user SET photo = ? WHERE userID = ?');
-      if($stmt->execute(array($photo, $userID)))
-          return true;
-      else
-          return false;
-    }catch(PDOException $e) {
-      return false;
-    }
-  } 
-
+  
   function updateUsername($userID, $username) {
     global $conn;
     try {
