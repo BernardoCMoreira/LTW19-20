@@ -1,11 +1,6 @@
 <br>
 <div class=property>
-<<<<<<< HEAD
-
-<?='<h1>' . $propertyInfo['address'] . '</h1>';?>
-=======
 	<?= '<h1>' . $propertyInfo['address'] . '</h1>'; ?>
->>>>>>> 9804f63f83439ca290439218e6023b13bf45d034
 	<ul class="imgs">
 		<?php
 		foreach ($images as $image)
@@ -36,8 +31,8 @@
 	<div class="addProperty">
 		<form action="../actions/action_add_extras.php" method="post">
 
-			<div class="extra">
-				<label>Extra:</label>
+			<div class="add_extra">
+				<label>Add Extra:</label>
 				<input type="text" name="extra" placeholder="extra">
 				<?php echo '<input type="hidden" name="propertyID" value=' . $propertyID . '>'; ?>
 			</div>
