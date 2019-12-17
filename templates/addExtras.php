@@ -1,5 +1,6 @@
 <br>
 <div class=property>
+
 <?='<h1>' . $propertyInfo['address'] . '</h1>';?>
 	<ul class="imgs">
     <?php
@@ -27,17 +28,19 @@
 		</div>
 		<?php } ?>
 	</div>
-<br>
 <div class="addProperty">
+<br>
+
   <form action="../actions/action_add_extras.php" method="post">
-    
-    <div class="extra">
-      <label>Extra:</label>
+
+    <div class="add_extra">
+      <label>Add Extra:</label>
       <input type="text" name="extra" placeholder="extra">
       <?php echo '<input type="hidden" name="propertyID" value=' . $propertyID . '>';?>
     </div>
-  
+
     <input type="submit" value="Add">
     <input type="button" value="Done" onclick="window.location.href='../pages/user.php'" />
   </form>
+
 </div>

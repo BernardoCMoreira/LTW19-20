@@ -40,7 +40,7 @@
 	</div>
 	<input type="submit" value="Rent">
 </div>
-
+</div>
 <script>
 	var startDate = new Date(document.getElementById('startDate').value);
 	var endDate = new Date(document.getElementById('endDate').value);
