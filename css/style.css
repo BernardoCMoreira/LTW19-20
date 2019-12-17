@@ -350,3 +350,9 @@ input[type=button]:hover {
 ul.active li {
     transform: translateY(-30px);
 }
+
+.addProperty {
+    border-radius: 0.2em;
+
+    background: #eeeeee;
+}
