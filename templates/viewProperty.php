@@ -23,7 +23,7 @@
 <?=			'<p>' . $propertyInfo['city'] . ', ' . $propertyInfo['country'] . '</p>';?>
 <?= 		'<p>Bedrooms: ' . $propertyInfo['numQuartos'] . '</p>'?>
 <?= 		'<p>Description: ' . $propertyInfo['description'] . '</p>'?>
-<?= 		'<p>Price Per Day: ' .  $propertyInfo['price'] . '</p>'?>
+<?= 		'<p>Price Per Day: <span  id="basePrice">' .  $propertyInfo['price'] . '</span> € </p>'?>
 		</div>
 		<?php 
 		if($extras != null){?>
@@ -37,8 +37,10 @@
 		<?php } ?>
 	</div>
 	<div id="totalPrice">
+		<h2>Total Price: <?= $propertyInfo['price']?>€</h2>
 	</div>
-	<input type="submit" value="Rent">
+	<input id="sendButton" type="submit" value="Rent">
+	<span id="sendButtonErrorMsg" style="display:none"> Dates are not valid </span>
 </div>
 
 <script>
@@ -47,25 +49,40 @@
 	
 	document.getElementById("startDate").onchange = function(event) {
 		startDate = new Date(document.getElementById('startDate').value);
-		updateTotalPrice();
+		if(validateDate())
+			updateTotalPrice();
 	}
 
 	document.getElementById("endDate").onchange = function(event) {
 		endDate = new Date(document.getElementById('endDate').value);
-		updateTotalPrice();
+		if(validateDate())
+			updateTotalPrice();
 	}
 
 	function updateTotalPrice() {
 		const dateDifference = (endDate.getTime() - startDate.getTime())/(24*60*60*1000);
-		console.log("Date diference: " + dateDifference);
 
 		var totalPriceElement = document.getElementById("totalPrice");
 		totalPriceElement.innerHTML = "";
 		let paragraph = document.createElement("h2");
-
-		const pricePerDay = "<?= $propertyInfo['price'] ?>";
+		
+		const pricePerDay = document.getElementById("basePrice").innerHTML;
 		const totalPrice = pricePerDay * dateDifference;
 		paragraph.innerHTML = "Total Price: " + totalPrice;
 		totalPriceElement.appendChild(paragraph);
+	}
+
+	function validateDate() {
+		let sendButton = document.getElementById("sendButton");
+		let sendButtonErrorMsg = document.getElementById("sendButtonErrorMsg");
+		if(startDate >= endDate) {
+			sendButton.disabled = true;
+			sendButtonErrorMsg.style.display = 'block';
+			return false;
+		} else {
+			sendButton.disabled = false;
+			sendButtonErrorMsg.style.display = 'none';
+			return true;
+		}
 	}
 </script>
