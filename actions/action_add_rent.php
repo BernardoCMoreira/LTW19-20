@@ -7,6 +7,7 @@
     if(! isset($_SESSION['username'])) {
         $_SESSION['error_messages'][] = "No user is signed in. Cannot complete action";
         header('Location: ../pages/login.php');
+        exit();
     }
 
     // Validate post information
