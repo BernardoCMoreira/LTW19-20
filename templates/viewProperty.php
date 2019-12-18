@@ -2,15 +2,15 @@
 <div class=property>
 	<?='<h1>' . $propertyInfo['address'] . '</h1>';?>
 	<ul class="imgs">
-		<?php
+<?php
 		foreach($images as $image)
     		if($image['aproved'])
 				printPImage($image);
-    ?>
+?>
 	</ul>
 	<form action="../actions/action_add_rent.php" method="post" enctype="multipart/form-data">
 		<div class="hiddenInputInfo">
-			<input type="hidden" name="propertyID" value=<?= $propertyInfo["propertyID"]?> >
+			<input type="hidden" name="propertyID" value=<?= $propertyInfo["propertyID"]?>>
 		</div>
 		<div class="dates">
 			<label for="date"> Starting Date</label>
@@ -31,7 +31,7 @@
 				<?='<p>Description: ' . $propertyInfo['description'] . '</p>'?>
 				<?='<p>Price Per Day: <span  id="basePrice">' .  $propertyInfo['price'] . '</span> € </p>'?>
 			</div>
-			<?php
+<?php
 				if($extras != null) {
 					echo '<div class="extra">';
 					echo '<h3>Extras</h3>';
@@ -39,7 +39,7 @@
 						echo '<p>' . $extra['name'] . '</p>';
 					echo '</div>';
 				}
-			?>
+?>
 		</div>
 		<div id="totalPrice">
 			<h2>Total Price: <?= $propertyInfo['price']?>€</h2>
@@ -53,20 +53,19 @@
 
 	</form>
 </div>
-</div>
 <script>
 	var startDate = new Date(document.getElementById('startDate').value);
 	var endDate = new Date(document.getElementById('endDate').value);
 
-	document.getElementById("startDate").onchange = function(event) {
+	document.getElementById("startDate").onchange = function (event) {
 		startDate = new Date(document.getElementById('startDate').value);
-		if(validateDate())
+		if (validateDate())
 			updateTotalPrice();
 	}
 
-	document.getElementById("endDate").onchange = function(event) {
+	document.getElementById("endDate").onchange = function (event) {
 		endDate = new Date(document.getElementById('endDate').value);
-		if(validateDate())
+		if (validateDate())
 			updateTotalPrice();
 	}
 
@@ -82,7 +81,7 @@
 	function validateDate() {
 		let sendButton = document.getElementById("sendButton");
 		let sendButtonErrorMsg = document.getElementById("sendButtonDataErrorMsg");
-		if(startDate >= endDate) {
+		if (startDate >= endDate) {
 			sendButton.disabled = true;
 			sendButtonErrorMsg.style.display = 'block';
 			return false;
