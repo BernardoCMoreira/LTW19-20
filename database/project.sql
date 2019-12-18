@@ -34,7 +34,7 @@ CREATE TABLE rent(
 drop table if exists rating;
 CREATE TABLE rating(
     ratingID INTEGER PRIMARY KEY REFERENCES rent(rentID),
-    pontuaçao FLOAT,
+    pontuacao FLOAT,
     comentario TEXT
 );
 
