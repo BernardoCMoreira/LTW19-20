@@ -12,7 +12,7 @@
 	if(!isset($local)) 
 		$local = "-";
 	if(!isset($price))
-    	$price = ($maxPrice + $minPrice) /2;
+    	$price = floor(($maxPrice + $minPrice) /2);
 ?>
 
     <div class="searchbar">
