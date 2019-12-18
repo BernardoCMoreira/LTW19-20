@@ -113,6 +113,30 @@
     return $min['min']; 
   }
 
+  function getPropertyComments($propertyID) {
+  	global $conn;
+    
+	  $stmt = $conn->prepare('SELECT rating.comentario AS comment FROM rating, rent
+  		WHERE rating.ratingID = rent.rentID AND rent.propertyID = ?');
+	  $stmt->execute(array($propertyID));
+	
+	  $comments = array();
+	  while($comment = $stmt->fetch())
+	  	$comments[] = $comment['comment'];
+
+	  return $comments;
+  }
+
+	function getPropertyScore($propertyID) {
+		global $conn;
+    
+		$stmt = $conn->prepare('SELECT avg(rating.pontuacao) AS score FROM rating, rent
+			WHERE rating.ratingID = rent.rentID AND rent.propertyID = ?');
+		$stmt->execute(array($propertyID));
+		$result = $stmt->fetch();
+		return $result['score'];
+	}
+
   function updateAddress($propertyID, $address) {
     global $conn;
     try {
