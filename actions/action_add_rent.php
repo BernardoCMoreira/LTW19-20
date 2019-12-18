@@ -45,7 +45,7 @@
     }
 
     $maxCancelDate_DAYS = 3;
-    $maxCancelDate = date("Y-m-d", time() - 24*60*60*$maxCancelDate_DAYS);
+    $maxCancelDate = date("Y-m-d", strtotime($startDate) - 24*60*60*$maxCancelDate_DAYS);
     $price = calculatePrice($propertyID, $startDate, $endDate);
     createRent($propertyID, $touristID, $startDate, $endDate, $maxCancelDate, $price);
 
