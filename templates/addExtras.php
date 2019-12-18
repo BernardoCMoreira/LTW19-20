@@ -31,8 +31,8 @@
 	<div class="addProperty">
 		<form action="../actions/action_add_extras.php" method="post">
 
-			<div class="extra">
-				<label>Extra:</label>
+			<div class="add_extra">
+				<label>Add Extra:</label>
 				<input type="text" name="extra" placeholder="extra">
 				<?php echo '<input type="hidden" name="propertyID" value=' . $propertyID . '>'; ?>
 			</div>

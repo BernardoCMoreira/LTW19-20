@@ -65,7 +65,7 @@ body>header a {
     padding: 0;
     margin: 10 auto;
     border-style: solid;
-    border: 2px solid var(--section-logocolor-1);
+    border: 3px solid var(--section-logocolor-1);
     border-color: var(--section-logocolor-1);
     border-radius: 0.3em;
 }
@@ -349,4 +349,10 @@ input[type=button]:hover {
 
 ul.active li {
     transform: translateY(-30px);
+}
+
+.addProperty {
+    border-radius: 0.2em;
+
+    background: #eeeeee;
 }
