@@ -70,6 +70,31 @@
 		return $newRendID;
 	}
 
+	function deleteRent($rentID) {
+		global $conn;
+
+		$stmt = $conn->prepare('DELETE FROM rent WHERE rentID = ?');
+		$stmt->execute(array($rentID));
+	}
+
+	function getRentInfo($rentID) {
+		global $conn;
+
+		$stmt = $conn->prepare('SELECT * FROM rent WHERE rentID = ?');
+		$stmt->execute(array($rentID));
+		return $stmt->fetch();
+	}
+
+	function getOwnerID($rentID) {
+		global $conn;
+
+		$stmt = $conn->prepare('SELECT property.ownerID AS ownerID FROM rent, property
+			WHERE rentID = ? AND rent.propertyID = property.propertyID');
+		$stmt->execute(array($rentID));
+		$result = $stmt->fetch();
+		return $result['ownerID'];
+	}
+
 	function displayUserSProperty($property) {
 		echo '<h2> <a href="../pages/viewProperty.php?propertyID=' . $property['propertyID'] . '">' . $property['address'] . '</a> </h2>';
 		echo '<a id="editRents" href="../pages/editProperty.php?propertyID=' . $property['propertyID'] . '"> Edit </a>';
@@ -80,10 +105,17 @@
 		echo '	<div class="tourist">';
 		echo '		<p><a href="../pages/user.php?userID=' . $rent['touristID']. '"> View Tourist </a></p> ';
 		echo '	</div>';
+		echo '	<div class="status"> Status: ' . getRentStatus($rent['rentID']) . '</div>';
 		echo '	<p>Start date: ' . $rent['startDate'] . '</p>';
 		echo '	<p>End date: ' . $rent['endDate'] . '</p>';
 		echo '	<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
-    	echo '	<p>Price: ' .  $rent['price'] . '</p>';
+		echo '	<p>Price: ' .  $rent['price'] . '</p>';
+		if(time() < strtotime($rent['startDate'])) {
+			echo '	<form action="../actions/action_cancel_rent.php" method="post" enctype="multipart/form-data">';
+			echo '		<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
+			echo '		<input class="cancelRentButton" type="submit" value="Cancel">';
+			echo '	</form>';
+		}
 		echo '</div>';
 	}
 
@@ -99,13 +131,38 @@
 
 	function displaytouristSRent($rent) {
 		echo '<div class="rentInfo">';
-		echo 	'<h2><a href="../pages/viewProperty.php?propertyID=' . $rent['propertyID']. '">' . $rent['address'] . '</a></h2>';
-		echo 	'<p><a href="../pages/user.php?userID=' . $rent['ownerID']. '"> View Owner </a></p> ';
-		echo 	'<p>Start date: ' . $rent['startDate'] . '</p>';
-		echo 	'<p>End date: ' . $rent['endDate'] . '</p>';
-		echo 	'<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
-    	echo 	'<p>Price: ' .  $rent['price'] . '</p>';
+		echo '	<h2><a href="../pages/viewProperty.php?propertyID=' . $rent['propertyID']. '">' . $rent['address'] . '</a></h2>';
+		echo '	<p><a href="../pages/user.php?userID=' . $rent['ownerID']. '"> View Owner </a></p> ';
+		echo '	<div class="status"> Status: ' . getRentStatus($rent['rentID']) . '</div>';
+		echo '	<p>Start date: ' . $rent['startDate'] . '</p>';
+		echo '	<p>End date: ' . $rent['endDate'] . '</p>';
+		echo '	<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
+		echo '	<p>Price: ' .  $rent['price'] . '</p>';
+		if(time() < strtotime($rent['cancelLimitDay'])) {
+			echo '	<form action="../actions/action_cancel_rent.php" method="post" enctype="multipart/form-data">';
+			echo '		<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
+			echo '		<input class="cancelRentButton" type="submit" value="Cancel">';
+			echo '	</form>';
+		}
 		echo '</div>';	
 	}
 
+	function getRentStatus($rentID) {
+		// Get date in days
+		$currentDate = time() / (24*60*60);
+		global $conn;
+
+		$stmt = $conn->prepare('SELECT startDate, endDate FROM rent WHERE rentID = ?');
+		$stmt->execute(array($rentID));
+		$result = $stmt->fetch();
+		$startDay = strtotime($result['startDate']) / (24*60*60);
+		$endDay = strtotime($result['endDate']) / (24*60*60);
+
+		if($currentDate < $startDay)
+			return "Pending";
+		else if($currentDate > $endDay)
+			return "Concluded";
+		else
+			return "Ongoing";
+	}
 ?>
