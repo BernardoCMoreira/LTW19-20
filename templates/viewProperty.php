@@ -33,13 +33,22 @@
 			</div>
 <?php
 	// Add extras
+
 	if($extras != null) {
 		echo '<div class="extra">';
 		echo '<h3>Extras</h3>';
 		foreach($extras as $extra)
 			echo '<p>' . $extra['name'] . '</p>';
 		echo '</div>';
+		echo '</div>';
 	}
+	echo '<div class="feedback">';
+		// Add score
+		$propertyScore = getPropertyScore($propertyInfo["propertyID"]);
+		echo '<div class="score">';
+		echo '	<h3>Score </h3>';
+		echo '<p>' . (isset($propertyScore) ? $propertyScore : 'No score yet') . '</p>';
+		echo '</div>';
 	// Add comments
 	$propertyComments = getPropertyComments($propertyInfo["propertyID"]);
 	echo '<div class="comments">';
@@ -53,14 +62,9 @@
 	} else
 		echo '<p>No comments exist</p>';
 	echo '</div>';
-	// Add score
-	$propertyScore = getPropertyScore($propertyInfo["propertyID"]);
-	echo '<div class="score">';
-	echo '	<h3>Score </h3>';
-	echo '<p>' . (isset($propertyScore) ? $propertyScore : 'No score yet') . '</p>';
 	echo '</div>';
 ?>
-		</div>
+		
 		<div id="totalPrice">
 			<h2>Total Price: <?= $propertyInfo['price']?>€</h2>
 		</div>
