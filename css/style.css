@@ -282,7 +282,6 @@ input[type=button]:hover {
 .rents a {
     text-decoration: none;
     color: black;
-
 }
 
 #editRents {
@@ -296,11 +295,13 @@ input[type=button]:hover {
     color: white;
 }
 
-.tourist>p>a {
+.tourist>p>a,
+.rented p a {
     color: #77bcb9
 }
 
-.tourist>p>a:hover {
+.tourist>p>a:hover,
+.rented p a:hover {
     background: #77bcb9;
     color: white;
 }
@@ -318,9 +319,6 @@ input[type=button]:hover {
     -moz-box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
     margin-bottom: 1em;
-
-
-
 }
 
 .rent {
