@@ -106,6 +106,8 @@
 	}
 
 	function displayPropertySRent($rent) {
+		$daysOfRent = (strtotime($rent['endDate']) - strtotime($rent['startDate'])) / (24*60*60);
+
 		echo '<div class="rent">';
 		echo '	<div class="tourist">';
 		echo '		<p><a href="../pages/user.php?userID=' . $rent['touristID']. '"> View Tourist </a></p> ';
@@ -114,7 +116,7 @@
 		echo '	<p>Start date: ' . $rent['startDate'] . '</p>';
 		echo '	<p>End date: ' . $rent['endDate'] . '</p>';
 		echo '	<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
-		echo '	<p>Price: ' .  $rent['price'] . '</p>';
+		echo '	<p>Price: ' .  $rent['price']*$daysOfRent . '</p>';
 		if(time() < strtotime($rent['startDate'])) {
 			echo '	<form action="../actions/action_cancel_rent.php" method="post" enctype="multipart/form-data">';
 			echo '		<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
@@ -135,6 +137,8 @@
 	}
 
 	function displaytouristSRent($rent) {
+		$daysOfRent = (strtotime($rent['endDate']) - strtotime($rent['startDate'])) / (24*60*60);
+
 		echo '<div class="rentInfo">';
 		echo '	<h2><a href="../pages/viewProperty.php?propertyID=' . $rent['propertyID']. '">' . $rent['address'] . '</a></h2>';
 		echo '	<p><a href="../pages/user.php?userID=' . $rent['ownerID']. '"> View Owner </a></p> ';
@@ -142,7 +146,7 @@
 		echo '	<p>Start date: ' . $rent['startDate'] . '</p>';
 		echo '	<p>End date: ' . $rent['endDate'] . '</p>';
 		echo '	<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
-		echo '	<p>Price: ' .  $rent['price'] . '</p>';
+		echo '	<p>Price: ' .  $rent['price']*$daysOfRent. '</p>';
 		if(time() < strtotime($rent['cancelLimitDay'])) {
 			echo '	<form action="../actions/action_cancel_rent.php" method="post" enctype="multipart/form-data">';
 			echo '		<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
