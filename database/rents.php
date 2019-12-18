@@ -21,9 +21,14 @@
 	function isPropertyAvalableFromTo($propertyID, $startDate, $endDate) {
 		global $conn;
 		
-		$stmt = $conn->prepare('SELECT COUNT(*) AS count FROM rent 
-			WHERE propertyID = ? AND startDate <= ? AND endDate <= ?');
-		$stmt->execute(array($propertyID, $startDate, $endDate));
+		$stmt = $conn->prepare('SELECT COUNT(*) AS count FROM rent
+			WHERE propertyID = :propertyID
+			AND ((startDate <= :endDate AND :endDate <= endDate)
+			OR (startDate <= :startDate AND :endDate <= startDate))');
+		$stmt->bindParam(':startDate', $startDate);
+		$stmt->bindParam(':endDate', $endDate);
+		$stmt->bindParam(':propertyID', $propertyID);
+		$stmt->execute();
 		$result = $stmt->fetch();
 		return $result['count'] == 0;
 	}
@@ -31,10 +36,10 @@
 	function isUserFreeFromTo($touristID, $startDate, $endDate) {
 		global $conn;
 		
-		$stmt = $conn->prepare('SELECT COUNT(*) AS count FROM rent WHERE touristID = :touristID
-			AND ((startDate <= :endDate AND startDate >= :endDate) OR
-			(endDate >= :startDate AND endDate <= :startDate) OR
-			(startDate <= :startDate AND endDate >= :endDate))');
+		$stmt = $conn->prepare('SELECT COUNT(*) AS count FROM rent
+			WHERE touristID = :touristID
+			AND ((startDate <= :endDate AND :endDate <= endDate)
+			OR (startDate <= :startDate AND :endDate <= startDate))');
 		$stmt->bindParam(':touristID', $touristID);
 		$stmt->bindParam(':startDate', $startDate);
 		$stmt->bindParam(':endDate', $endDate);
