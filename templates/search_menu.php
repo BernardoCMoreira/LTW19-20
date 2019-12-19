@@ -7,24 +7,29 @@
 	$maxPrice = getMaxPrice();
 	$minPrice = getMinPrice();
 
+	if(!isset($startdate)) 
+		$startdate = null;
+	if(!isset($enddate)) 
+		$enddate = null;
 	if(!isset($bedrooms)) 
 		$bedrooms = "-";
 	if(!isset($local)) 
 		$local = "-";
 	if(!isset($price))
-    	$price = floor(($maxPrice + $minPrice) /2);
+		$price = floor(($maxPrice + $minPrice) /2);
+	
 ?>
 
     <div class="searchbar">
-        <label for="date"> Starting Date</label><br>
-        <input type="date" id="date" name="date" >
-        <br>
-		<br>
-		<label for="date"> End Date</label><br>
-        <input type="date" id="date" name="date" >
-        <br>
-		<br>
-        <form action="searchPage.php" method="get">
+		<form action="searchPage.php" method="get">
+			<label for="date"> Starting Date</label><br>
+			<input type="date" id="date" name="startdate" value=<?=$startdate?> >
+			<br>
+			<br>
+			<label for="date"> End Date</label><br>
+			<input type="date" id="date" name="enddate" value=<?=$enddate?> >
+			<br>
+			<br>
         	<label for="bedrooms"> Bedrooms</label>
         	<br>
         	<select id="bedrooms" name="bedrooms">

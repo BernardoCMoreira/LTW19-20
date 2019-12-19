@@ -33,6 +33,18 @@
 		return $result['count'] == 0;
 	}
 
+	function getPropertiesAvalableFromTo($properties, $startDate, $endDate) {
+		$properties_final = array();
+		if( $startDate > $endDate) return $properties_final;
+
+		foreach ($properties as $p) {
+		  if( isPropertyAvalableFromTo($p['propertyID'], $startDate, $endDate));
+				array_push($properties_final,$p );
+		  
+		}
+		return $properties_final;
+	}
+
 	function isUserFreeFromTo($touristID, $startDate, $endDate) {
 		global $conn;
 		
