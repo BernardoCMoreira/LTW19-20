@@ -23,8 +23,9 @@
 		
 		$stmt = $conn->prepare('SELECT COUNT(*) AS count FROM rent
 			WHERE propertyID = :propertyID
-			AND ((startDate <= :endDate AND :endDate <= endDate)
-			OR (startDate <= :startDate AND :endDate <= startDate))');
+			AND ((startDate <= :endDate AND :endDate >= endDate)
+			OR (startDate <= :startDate AND :endDate <= startDate)
+			OR (startDate >= :startDate AND :endDate >= startDate))');
 		$stmt->bindParam(':startDate', $startDate);
 		$stmt->bindParam(':endDate', $endDate);
 		$stmt->bindParam(':propertyID', $propertyID);
@@ -36,12 +37,13 @@
 	function getPropertiesAvalableFromTo($properties, $startDate, $endDate) {
 		$properties_final = array();
 		if( $startDate > $endDate) return $properties_final;
-
 		foreach ($properties as $p) {
-		  if( isPropertyAvalableFromTo($p['propertyID'], $startDate, $endDate));
+		  if( isPropertyAvalableFromTo($p['propertyID'], $startDate, $endDate))
 				array_push($properties_final,$p );
-		  
+
 		}
+
+
 		return $properties_final;
 	}
 
