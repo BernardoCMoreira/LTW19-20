@@ -5,7 +5,6 @@
 	$city_options = getAllCities();
 	$bedroom_options = getAllBedrooms();
 	$maxPrice = getMaxPrice();
-	$minPrice = getMinPrice();
 
 	if(!isset($startdate)) 
 		$startdate = null;
@@ -16,7 +15,7 @@
 	if(!isset($local)) 
 		$local = "-";
 	if(!isset($price))
-		$price = floor(($maxPrice + $minPrice) /2);
+		$price = $maxPrice;
 	
 ?>
 
