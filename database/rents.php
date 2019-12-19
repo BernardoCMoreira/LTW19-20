@@ -52,8 +52,9 @@
 		
 		$stmt = $conn->prepare('SELECT COUNT(*) AS count FROM rent
 			WHERE touristID = :touristID
-			AND ((startDate <= :endDate AND :endDate <= endDate)
-			OR (startDate <= :startDate AND :endDate <= startDate))');
+			AND ((startDate <= :endDate AND :endDate >= endDate)
+			OR (startDate <= :startDate AND :endDate <= startDate)
+			OR (startDate >= :startDate AND :endDate >= startDate))');
 		$stmt->bindParam(':touristID', $touristID);
 		$stmt->bindParam(':startDate', $startDate);
 		$stmt->bindParam(':endDate', $endDate);
