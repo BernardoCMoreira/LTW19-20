@@ -52,7 +52,10 @@
   }
 
   function printUImage($image) {
-    echo '<img src="../images/' . $image['name'] . $image['type'] . '" alt="Logo " width="150" height="150" />';
+    if($image == null)
+    echo '<img src="../images/default_user" alt="Logo " width="150" height="150" />';
+    else
+      echo '<img src="../images/' . $image['name'] . $image['type'] . '" alt="Logo " width="150" height="150" />';
   }
 
   function getUserImg($userID) {

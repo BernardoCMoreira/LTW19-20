@@ -34,6 +34,13 @@
     $stmt->execute(array($username));
     return $stmt->fetch();
   }
+
+  function getUserById($userID) {
+    global $conn;  
+    $stmt = $conn->prepare('SELECT * FROM user WHERE username = ?');
+    $stmt->execute(array($userID));
+    return $stmt->fetch();
+  }
   
   function updateUsername($userID, $username) {
     global $conn;

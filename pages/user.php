@@ -5,8 +5,18 @@
 
     if (isset($_SESSION['username'])){
     	$pageTitleExtra = "User";
-    	include ('../templates/commom/header.php');
-        $user = getUser($_SESSION['username']);
+        include ('../templates/commom/header.php');
+        $owner =0;
+        if(isset($_GET['userID'])){
+            $owner =1;
+            $user = getUserById($_GET['userID']);
+            print_r( $user );
+        }
+        else{
+            $user = getUser($_SESSION['username']);
+            print_r( $user );
+        }
+ 
         $image = getUserImg($user['userID']);
     	include ('../templates/user.php');
     	include ('../templates/commom/footer.php');

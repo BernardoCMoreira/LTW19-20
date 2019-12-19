@@ -25,8 +25,11 @@
         <p><?=$user['description']?></p>
       </div>
     </div>
-
+    <?php 
+        if($owner == 0){
+      ?>
     <input type="button" value="Edit Profile" onclick="window.location.href='../pages/userEdit.php'" />
     <input type="button" value="Add New Property" onclick="window.location.href='../pages/addProperty.php'" />
+      <?php } ?>
   </form>
 </div>
