@@ -375,3 +375,19 @@ ul.active li {
     color: white;
     padding: 1em;
 }
+
+.rentInfo form>input {
+    width: 25%;
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    display: block;
+    -webkit-box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 42px -30px rgba(0, 0, 0, 0.75);
+}
+
+.rentInfo form>input[type="text"] {
+    width: 50%;
+    height: 100px;
+}
