@@ -122,6 +122,10 @@ INSERT INTO image VALUES (32, 8, null, "A0AE29BA9A65787B63642716A5D66F70",".jpg"
 INSERT INTO image VALUES (33, 8, null, "C2A3D4A106A71E29EB41578461BB5245",".jpg", 1);
 INSERT INTO image VALUES (34, 1, null, "46395CD8F8700371593B6E531E08DA36",".jpg", 1);
 
+INSERT INTO image VALUES (36, null,  1, "default_user",".jpg", 1);
+INSERT INTO image VALUES (37, null,  3, "default_user",".jpg", 1);
+INSERT INTO image VALUES (38, null, 14, "default_user",".jpg", 1);
+
 INSERT INTO rent VALUES (1, 1, 2, "2019-12-20", "2019-12-31", "2019-12-18", 400);
 INSERT INTO rent VALUES (2, 2, 4, "2020-01-01", "2020-01-31", "2019-12-01", 425);
 INSERT INTO rent VALUES (3, 2, 1, "2019-10-01", "2019-10-31", "2019-09-30", 300);
