@@ -179,8 +179,8 @@
 			echo '<p>Your rating: </p>';
 			echo '<form action="../actions/action_add_rating.php" method="post" enctype="multipart/form-data">';
 			echo '	<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
-			echo '	<input type="text" name="rating" placeholder="'. $ratingInfo['comentario'] .'">';
-			echo '	<input type="number" name="score" max="5" min="1" step="0.5" placeholder="' . $ratingInfo['pontuacao'] . '">';
+			echo '	<input type="text" name="comentario" placeholder="'. $ratingInfo['comentario'] .'">';
+			echo '	<input type="number" name="pontuacao" max="5" min="1" step="0.5" placeholder="' . $ratingInfo['pontuacao'] . '">';
 			echo '	<input type="submit" value="' . $sendButtonMessage . '">';
 			echo '</form>';
 		}
