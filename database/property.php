@@ -104,6 +104,15 @@
     return $max['max']; 
   }
 
+  function getMinPrice() {
+    global $conn;
+    
+    $stmt = $conn->prepare('SELECT DISTINCT min(price) AS min FROM property');
+    $stmt->execute();
+    $min = $stmt->fetch();
+    return $min['min']; 
+  }
+
   function getPropertyComments($propertyID) {
   	global $conn;
     
@@ -113,7 +122,7 @@
 	
 	  $comments = array();
 	  while($comment = $stmt->fetch())
-	  	$comments[] = $comment['comment'];
+	  	array_push($comments, $comment['comment']);
 
 	  return $comments;
   }
