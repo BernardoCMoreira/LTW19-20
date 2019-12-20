@@ -39,14 +39,14 @@
             header('Location: ../pages/rents.php');
             exit();
         } else {
-            if(isset($_POST['pontuacao'])) {
-                $pontuacao = trim(strip_tags($pontuacao));
+            if($_POST['pontuacao']) {
+                $pontuacao = trim(strip_tags($_POST['pontuacao']));
                 $stmt = $conn->prepare('UPDATE rating SET pontuacao = ? WHERE ratingID  = ?');
-                $stmt->execute(array($_POST['pontuacao']), $rentID);
+                $stmt->execute(array($pontuacao, $rentID));
             }
-            if(isset($_POST['comentario'])) {
+            if($_POST['comentario']) {
                 $comentario = trim(strip_tags($_POST['comentario']));
-                $stmt = $conn->prepare('UPDATE rating SET comentario = ?  WHERE rentID = ?');
+                $stmt = $conn->prepare('UPDATE rating SET comentario = ? WHERE ratingID = ?');
                 $stmt->execute(array($comentario, $rentID));
             }
         }
