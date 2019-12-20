@@ -1,4 +1,4 @@
-Elementos do grupo:
+Elementos do grupo 75:
     201605240 - Ana Rita Fonseca Santos
     201604014 - Bernardo Costa Moreira
     201604343 - Luís Miguel Pedrosa de Moura Oliveira Henriques
