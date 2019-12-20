@@ -12,12 +12,12 @@ os elementos do grupo.
 
 Credenciais:
     Embora não exista um admin, os seguintes usernames são os que contêm mais
-informação:
+informação tanto de propriedades como de rents:
     -201605240;
     -201604014;
     -201604343.
-    Para todos os user na base de dados, incluindo os 3 acima, a password
-utilizada foi: Password1!
+    Para todos os users na base de dados, incluindo os 3 acima mencionados, 
+a password utilizada foi: Password1!
 
 
 Informação Extra:
