@@ -10,11 +10,9 @@
         if(isset($_GET['userID'])){
             $owner =1;
             $user = getUserById($_GET['userID']);
-            print_r( $user );
         }
         else{
             $user = getUser($_SESSION['username']);
-            print_r( $user );
         }
  
         $image = getUserImg($user['userID']);
