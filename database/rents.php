@@ -68,7 +68,8 @@
 		global $conn;
 
 		$days = (strtotime($endDate) - strtotime($startDate)) / (24*60*60);
-		
+		$days = round($days);
+
 		$stmt = $conn->prepare('SELECT price FROM property WHERE propertyID = ?');
 		$stmt->execute(array($propertyID));
 		$result = $stmt->fetch();
