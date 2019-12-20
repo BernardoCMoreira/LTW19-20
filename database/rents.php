@@ -163,10 +163,26 @@
 		echo '	<p>Last date to cancel: ' . $rent['cancelLimitDay'] . '</p>';
 		echo '	<p>Price: ' .  $rent['price']*$daysOfRent. '</p>';
 		if(time() < strtotime($rent['cancelLimitDay'])) {
-			echo '	<form action="../actions/action_cancel_rent.php" method="post" enctype="multipart/form-data">';
-			echo '		<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
-			echo '		<input class="cancelRentButton" type="submit" value="Cancel">';
-			echo '	</form>';
+			echo '<form action="../actions/action_cancel_rent.php" method="post" enctype="multipart/form-data">';
+			echo '	<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
+			echo '	<input class="cancelRentButton" type="submit" value="Cancel">';
+			echo '</form>';
+		} else if (strtotime($rent['endDate']) < time()) {
+			$ratingInfo = getRatingInfo($rent["rentID"]);
+			$sendButtonMessage = "Edit";
+			if($ratingInfo == false) {
+				$ratingInfo['pontuacao'] = '-';
+				$ratingInfo['comentario'] = 'no comment yet';
+				$sendButtonMessage = "Add";
+			}
+
+			echo '<p>Your rating: </p>';
+			echo '<form action="../actions/action_add_rating.php" method="post" enctype="multipart/form-data">';
+			echo '	<input type="hidden" name="rentID" value="' . $rent["rentID"] . '">';
+			echo '	<input type="text" name="rating" placeholder="'. $ratingInfo['comentario'] .'">';
+			echo '	<input type="number" name="score" max="5" min="1" step="0.5" placeholder="' . $ratingInfo['pontuacao'] . '">';
+			echo '	<input type="submit" value="' . $sendButtonMessage . '">';
+			echo '</form>';
 		}
 		echo '</div>';	
 	}
@@ -188,5 +204,13 @@
 			return "Concluded";
 		else
 			return "Ongoing";
+	}
+
+	function getRatingInfo($rentID) {
+		global $conn;
+
+		$stmt = $conn->prepare('SELECT * FROM rating WHERE ratingID = ?');
+		$stmt->execute(array($rentID));
+		return $stmt->fetch();
 	}
 ?>
