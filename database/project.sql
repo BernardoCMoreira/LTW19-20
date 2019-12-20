@@ -143,7 +143,7 @@ INSERT INTO extra VALUES ( "Two Kitchens", 2);
 CREATE TRIGGER rattingValidation
 BEFORE INSERT on rating
 For Each Row
-When (SELECT rent.endDate FROM rating, rent WHERE new.ratingID = rent.rentID AND rent.endDate < date('now'))
+When (SELECT rent.endDate FROM rating, rent WHERE new.ratingID = rent.rentID AND rent.endDate > date('now'))
 Begin
     SELECT raise(rollback, 'Impossivel de inserir rating se o aluguer não tiver terminado');
 End;
