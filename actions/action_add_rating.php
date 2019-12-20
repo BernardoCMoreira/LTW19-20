@@ -8,7 +8,7 @@
         header('Location: ../pages/rents.php');
         exit();
     }
-    $rentID = $_POST['rentID'];
+    $rentID = trim(strip_tags($_POST['rentID']));
 
     //Check if user is tourist and,
     // therefore, can edit his rent
@@ -23,8 +23,10 @@
     global $conn;
     if($ratingInfo == null) {
         if(isset($_POST['pontuacao']) && isset($_POST['comentario'])) {
+            $pontuacao = trim(strip_tags($_POST['pontuacao']));
+            $comentario = trim(strip_tags($_POST['comentario']));
 		    $stmt = $conn->prepare('INSERT INTO rating VALUES (?, ?, ?)');
-            $stmt->execute(array($rentID, $_POST['pontuacao'], $_POST['comentario']));
+            $stmt->execute(array($rentID, $pontuacao, $comentario));
             $_SESSION['success_messages'][] = "Score/Rating was added with success";
         } else {
             $_SESSION['error_messages'][] = "Missing values. Cannot complete action";
@@ -32,19 +34,21 @@
             exit();
         }
     } else {
-        if(isset($_POST['pontuacao']) && isset($_POST['comentario'])) {
-            $stmt = $conn->prepare('UPDATE rating SET pontuacao = ?, comentario = ?  WHERE ratingID = ?');
-            $stmt->execute(array($_POST['pontuacao'], $_POST['comentario'], $rentID));
-        } else if(isset($_POST['pontuacao'])) {
-            $stmt = $conn->prepare('UPDATE rating SET pontuacao = ? WHERE ratingID  = ?');
-            $stmt->execute(array($_POST['pontuacao']), $rentID);
-        } else if(isset($_POST['comentario'])) {
-            $stmt = $conn->prepare('UPDATE rating SET comentario = ?  WHERE rentID = ?');
-            $stmt->execute(array($_POST['comentario'], $rentID));
-        } else {
+        if(! isset($_POST['pontuacao']) && ! isset($_POST['comentario'])) {
             $_SESSION['error_messages'][] = "Missing values. Cannot complete action";
             header('Location: ../pages/rents.php');
             exit();
+        } else {
+            if(isset($_POST['pontuacao'])) {
+                $pontuacao = trim(strip_tags($pontuacao));
+                $stmt = $conn->prepare('UPDATE rating SET pontuacao = ? WHERE ratingID  = ?');
+                $stmt->execute(array($_POST['pontuacao']), $rentID);
+            }
+            if(isset($_POST['comentario'])) {
+                $comentario = trim(strip_tags($_POST['comentario']));
+                $stmt = $conn->prepare('UPDATE rating SET comentario = ?  WHERE rentID = ?');
+                $stmt->execute(array($comentario, $rentID));
+            }
         }
         $_SESSION['success_messages'][] = "Score/Rating was edited with success";
     }

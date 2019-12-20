@@ -21,12 +21,12 @@ if ($_FILES["fileToUpload"]["name"]) {
 
         // Insert property data into database
         if($_POST['address'] && $_POST['city'] && $_POST['country'] && $_POST['numQuartos'] && $_POST['price']){
-            $address = $_POST['address'];
-            $city = $_POST['city'];
-            $country = $_POST['country'];
-            $numQuartos = $_POST['numQuartos'];
-            $description = $_POST['description'];
-            $price = $_POST['price'];
+            $address = trim(strip_tags($_POST['address']));
+            $city = trim(strip_tags($_POST['city']));
+            $country = trim(strip_tags($_POST['country']));
+            $numQuartos = trim(strip_tags($_POST['numQuartos']));
+            $description = trim(strip_tags($_POST['description']));
+            $price = trim(strip_tags($_POST['price']));
 
             $propertyID = createProperty($ownerID, $address, $city, $country, $numQuartos, $description, $price);
 

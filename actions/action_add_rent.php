@@ -12,19 +12,19 @@
 
     // Validate post information
     $touristID = getUser($_SESSION['username'])['userID'];
-    $propertyID = $_POST['propertyID'];
+    $propertyID = trim(strip_tags($_POST['propertyID']));
     if(! isset($propertyID)) {
         $_SESSION['error_messages'][] = "Missing propertyID. Returning to main page";
         header('Location: ../pages/mainPage.php');
         exit();
     }
-    $startDate = $_POST['startDate'];
+    $startDate = trim(strip_tags($_POST['startDate']));
     if(! isset($startDate)) {
         $_SESSION['error_messages'][] = "Missing startDate. Returning to main page";
         header('Location: ../pages/mainPage.php');
         exit();
     }
-    $endDate = $_POST['endDate'];
+    $endDate = trim(strip_tags($_POST['endDate']));
     if(! isset($endDate)) {
         $_SESSION['error_messages'][] = "Missing endDate. Returning to main page";
         header('Location: ../pages/mainPage.php');

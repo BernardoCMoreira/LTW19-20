@@ -5,8 +5,8 @@ include_once('../database/property.php');
 include_once('../database/image.php');
 include_once('../database/extra.php');
 
-$propertyID = $_POST['propertyID'];
-$extra = $_POST['extra'];
+$propertyID = trim(strip_tags($_POST['propertyID']));
+$extra = trim(strip_tags($_POST['extra']));
 if($extra) createExtra($extra, $propertyID);
 
 header("Location: ../pages/addPropertyExtras.php?propertyID=$propertyID");

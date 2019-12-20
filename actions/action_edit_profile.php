@@ -41,7 +41,7 @@
   }
     
   if($_POST['username']){
-
+    $username = trim(strip_tags($_POST['username']));
     if(updateUsername( $userID, $_POST['username'])==null){
       $_SESSION['error_messages'][] = "Error updating username";
     }
@@ -51,29 +51,29 @@
 
   }
   if($_POST['password']){
-
-    if(updatePassword( $userID, $_POST['password'])==null){
+    $password = trim(strip_tags($_POST['password']));
+    if(updatePassword( $userID, $password)==null){
       $_SESSION['error_messages'][] = "Error updating password";
     }
 
   }
   if($_POST['name']){
-
+    $name = trim(strip_tags($_POST['name']));
     if(updateName( $userID, $_POST['name'])==null){
       $_SESSION['error_messages'][] = "Error updating name";
     }
 
   }
   if($_POST['email']){
-
-    if(updateEmail( $userID, $_POST['email'])==null){
+    $email = trim(strip_tags($_POST['email']));
+    if(updateEmail( $userID, $email)==null){
       $_SESSION['error_messages'][] = "Error updating email";
     }
 
   }
   if($_POST['description']){
-
-    if(updateDescription( $userID, $_POST['description'])==null){
+    $description = trim(strip_tags($_POST['description']));
+    if(updateDescription( $userID, $description)==null){
       $_SESSION['error_messages'][] = "Error updating description";
     }
 

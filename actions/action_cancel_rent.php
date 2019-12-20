@@ -11,7 +11,7 @@
 
     // Validate post information
     $userID = getUser($_SESSION['username'])['userID'];
-    $rentID = $_POST['rentID'];
+    $rentID = trim(strip_tags($_POST['rentID']));
     if(! isset($rentID)) {
         $_SESSION['error_messages'][] = "Missing rentID. Returning to main page";
         header('Location: ../pages/mainPage.php');

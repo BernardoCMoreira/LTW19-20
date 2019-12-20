@@ -5,7 +5,7 @@
   include_once('../database/image.php');
   include_once('../database/extra.php');
 
-  $propertyID = $_POST['propertyID'];
+  $propertyID = trim(strip_tags($_POST['propertyID']));
 
   if ($_FILES["fileToUpload"]["name"]) {
     // Generate filename
@@ -31,43 +31,43 @@
   }
 
   if($_POST['address']){
-
-    if(updateAddress( $propertyID, $_POST['address'])==null){
+    $address = trim(strip_tags($_POST['address']));
+    if(updateAddress( $propertyID, $address)==null){
       $_SESSION['error_messages'][] = "Error updating address";
     }
 
   }
   if($_POST['city']){
-
-    if(updateCity( $propertyID, $_POST['city'])==null){
+    $city = trim(strip_tags($_POST['city']));
+    if(updateCity( $propertyID, $city)==null){
       $_SESSION['error_messages'][] = "Error updating city";
     }
 
   }
   if($_POST['country']){
-
-    if(updateCountry( $propertyID, $_POST['country'])==null){
+    $country = trim(strip_tags($_POST['country']));
+    if(updateCountry( $propertyID, $country)==null){
       $_SESSION['error_messages'][] = "Error updating country";
     }
 
   }
   if($_POST['numQuartos']){
-
-    if(updateNumQuartos( $propertyID, $_POST['numQuartos'])==null){
+    $numQuartos = trim(strip_tags($_POST['numQuartos']));
+    if(updateNumQuartos( $propertyID, $numQuartos)==null){
       $_SESSION['error_messages'][] = "Error updating numQuartos";
     }
 
   }
   if($_POST['description']){
-
-    if(updatePDescription( $propertyID, $_POST['description'])==null){
+    $description = trim(strip_tags($_POST['description']));
+    if(updatePDescription( $propertyID, $description)==null){
       $_SESSION['error_messages'][] = "Error updating description";
     }
 
   }
   if($_POST['price']){
-
-    if(updatePrice( $propertyID, $_POST['price'])==null){
+    $price = trim(strip_tags($_POST['price']));
+    if(updatePrice( $propertyID, $price)==null){
       $_SESSION['error_messages'][] = "Error updating price";
     }
 
