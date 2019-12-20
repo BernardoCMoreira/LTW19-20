@@ -53,7 +53,7 @@
 
   function printUImage($image) {
     if($image == null)
-    echo '<img src="../images/default_user" alt="Logo " width="150" height="150" />';
+      echo '<img src="../images/default_user.jpg" alt="Logo " width="150" height="150" />';
     else
       echo '<img src="../images/' . $image['name'] . $image['type'] . '" alt="Logo " width="150" height="150" />';
   }
